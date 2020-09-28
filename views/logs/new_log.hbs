@@ -1,13 +1,13 @@
-{{!-- call form-log-tech and form-log-feedback
-create js script to toggle "hidden" class on both when "next" btn is clicked --}}
-
 <h1>Register a new log</h2>
-
 
     <form class="form" action="/logs/create" method="POST">
 
         <div id="form-log-tech-page" class="form">
             {{> form_log_tech}}
+        </div>
+
+        <div id="add-new-coffee" class="hidden">
+            {{> form_coffee}}
         </div>
 
         <a id="new-log-back-btn" class="hidden">go back</a>

@@ -1,15 +1,15 @@
-<form action="/coffee/create" method="POST">
+<form id="create-new-coffee" action="/coffee/create" method="POST">
 
     <label for="name">Name</label>
-    <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="Test">
+    <input id="coffee-name" name="name" placeholder="HEIRLOOM" type="text" required value="Test">
     <br>
 
     <label for="country">Country</label>
-    <input id="country" name="country" placeholder="Simada" type="text" required value="Test">
+    <input id="coffee-country" name="country" placeholder="Simada" type="text" required value="Test">
     <br>
 
     <label for="region">Region</label>
-    <input id="region" name="region" placeholder="Ethiopia" type="text" value="Test">
+    <input id="coffee-region" name="region" placeholder="Ethiopia" type="text" value="Test">
     <br>
 
     <legend>Drying Method</legend>
@@ -24,7 +24,7 @@
     </label><br>
 
     <label for="altitude">Altitude</label>
-    <input id="altitude" name="altitude" placeholder="1000" type="number" value="1500">
+    <input id="coffee-altitude" name="altitude" placeholder="1000" type="number" value="1500">
     <br>
 
     <legend>Roast</legend>
@@ -76,5 +76,6 @@
         <label for="burned">Burned</label>
     </div>
     <br>
-    <button>Submit</button>
+    <a id="save-coffee-new-log" class="hidden">save coffee and go back to my log</a>
+    <button id="save-coffee-btn">Submit</button>
 </form>
