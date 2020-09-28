@@ -17,7 +17,7 @@ router.post('/create', (req, res, next) => {
 //R
 
 //U 
-router.get('/create', (req, res, next) => res.render('./coffees/edit_coffee'));
+router.get('/:id/edit', (req, res, next) => res.render('./coffees/edit_coffee', { coffee : Coffee.findById(req.params.id)}));
 
 router.post('/create', (req, res, next) => {
     try {

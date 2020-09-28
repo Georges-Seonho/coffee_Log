@@ -1,15 +1,15 @@
 <form action="/coffee/create" method="POST">
 
     <label for="name">Name</label>
-    <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="{{this.name}}">
+    <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="{{coffee.name}}">
     <br>
 
     <label for="country">Country</label>
-    <input id="country" name="country" placeholder="Simada" type="text" required value="{{this.country}}">
+    <input id="country" name="country" placeholder="Simada" type="text" required value="{{coffee.country}}">
     <br>
 
     <label for="region">Region</label>
-    <input id="region" name="region" placeholder="Ethiopia" type="text" value="{{this.region}}">
+    <input id="region" name="region" placeholder="Ethiopia" type="text" value="{{coffee.region}}">
     <br>
 
     <legend>Drying Method</legend>
@@ -76,5 +76,5 @@
         <label for="burned">Burned</label>
     </div>
     <br>
-    <button>Submit</button>
+    <button>Save changes</button>
 </form>
