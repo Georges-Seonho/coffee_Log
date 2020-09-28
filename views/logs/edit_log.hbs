@@ -1,0 +1,184 @@
+<div>
+<label for="date">Date</label>
+<input type="date" id="date" name="date" value="{{#formatDateInput log.date}}{{/formatDateInput}}" required>
+<br>
+
+<label for="brew-time">Brew time</label>
+<input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime" value="{{log.brewTime}}" required>
+<br>
+
+<label for="brew-method">Brew method</label>
+<select name="brewMethod" id="brew-method" required>
+    {{#each techniques}}
+    {{!-- {{#isSameId  this.brewMethod ../album.artist }} --}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+</select>
+<br>
+
+<label for="coffee">Coffee</label>
+<select name="coffee" id="coffee" required>
+    {{#each coffees}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+</select>
+<br>
+
+<label for="coffee-qty">Ground coffee</label>
+<input type="number" id="coffee-qty" placeholder="gr" name="coffeeQty" value="{{log.coffeeQty}}" required>
+<br>
+
+<label for="water-qty">Water</label>
+<input type="number" id="water-qty" placeholder="gr" name="waterQty" value="{{log.waterQty}}"  required>
+<br>
+
+<p>Grind size</p>
+
+<div>
+    <input type="radio" id="grind-size-1" name="grindSize" value="coarse" {{isSameValue log.grindSize "coarse"}} required>
+    <label for="grind-size">Coarse</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-2" name="grindSize" value="medium" {{isSameValue log.grindSize "medium"}}>
+    <label for="grind-size">Medium</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-3" name="grindSize" value="fine" {{isSameValue log.grindSize "fine"}}>
+    <label for="grind-size">Fine</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-4" name="grindSize" value="extra fine" {{isSameValue log.grindSize "extra fine"}}>
+    <label for="grind-size">Extra fine</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-5" name="grindSize" value="turkish" {{isSameValue log.grindSize "turkish"}}>
+    <label for="grind-size">Turkish</label>
+</div>
+</div>
+
+<div>
+<p>How was your coffee?</p>
+<div>
+    <input type="radio" id="satisfaction-1" name="satisfaction" value="1" {{isSameValue log.satisfaction "1"}} required>
+    <label for="satisfaction">Disgusting</label>
+</div>
+<div>
+    <input type="radio" id="satisfaction-2" name="satisfaction" value="2" {{isSameValue log.satisfaction "2"}}>
+    <label for="satisfaction">Quite bad</label>
+</div>
+<div>
+    <input type="radio" id="satisfaction-3" name="satisfaction" value="3" {{isSameValue log.satisfaction "3"}}>
+    <label for="satisfaction">Ok</label>
+</div>
+<div>
+    <input type="radio" id="satisfaction-4" name="satisfaction" value="4" {{isSameValue log.satisfaction "4"}}>
+    <label for="satisfaction">Good</label>
+</div>
+<div>
+    <input type="radio" id="satisfaction-4" name="satisfaction" value="5" {{isSameValue log.satisfaction "5"}}>
+    <label for="satisfaction">Delicious</label>
+</div>
+
+<p>Acidity</p>
+<div>
+    <input type="radio" id="acidity-1" name="acidity" value="not acid" {{isSameValue log.acidity "not acid"}} required>
+    <label for="acidity">Not acid</label>
+</div>
+<div>
+    <input type="radio" id="acidity-2" name="acidity" value="a little acid" {{isSameValue log.acidity "a little acid"}}>
+    <label for="acidity">A little acid</label>
+</div>
+<div>
+    <input type="radio" id="acidity-3" name="acidity" value="neutral" {{isSameValue log.acidity "neutral"}}>
+    <label for="acidity">Neutral</label>
+</div>
+<div>
+    <input type="radio" id="acidity-4" name="acidity" value="acid" {{isSameValue log.acidity "acid"}}>
+    <label for="acidity">Acid</label>
+</div>
+<div>
+    <input type="radio" id="acidity-5" name="acidity" value="very acid" {{isSameValue log.acidity "very acid"}}>
+    <label for="acidity">Very acid</label>
+</div>
+
+<p>Intensity</p>
+<div>
+    <input type="radio" id="intensity-1" name="intensity" value="light" {{isSameValue log.intensity "light"}} required>
+    <label for="intensity">Light</label>
+</div>
+<div>
+    <input type="radio" id="intensity-2" name="intensity" value="moderate" {{isSameValue log.intensity "moderate"}}>
+    <label for="intensity">Moderate</label>
+</div>
+<div>
+    <input type="radio" id="intensity-3" name="intensity" value="medium" {{isSameValue log.intensity "medium"}}>
+    <label for="intensity">Medium</label>
+</div>
+<div>
+    <input type="radio" id="intensity-4" name="intensity" value="strong" {{isSameValue log.intensity "strong"}}>
+    <label for="intensity">Strong</label>
+</div>
+<div>
+    <input type="radio" id="intensity-5" name="intensity" value="very strong" {{isSameValue log.intensity "very strong"}}>
+    <label for="intensity">Very Strong</label>
+</div>
+
+<p>Bitterness</p>
+<div>
+    <input type="radio" id="bitterness-1" name="bitterness" value="not bitter" {{isSameValue log.bitterness "not bitter"}} required>
+    <label for="bitterness">Not bitter</label>
+</div>
+<div>
+    <input type="radio" id="bitterness-2" name="bitterness" value="a little bitter" {{isSameValue log.bitterness "a little bitter"}}>
+    <label for="bitterness">A little bitter</label>
+</div>
+<div>
+    <input type="radio" id="bitterness-3" name="bitterness" value="neutral" {{isSameValue log.bitterness "neutral"}}>
+    <label for="bitterness">Neutral</label>
+</div>
+<div>
+    <input type="radio" id="bitterness-4" name="bitterness" value="bitter" {{isSameValue log.bitterness "bitter"}}>
+    <label for="bitterness">Bitter</label>
+</div>
+<div>
+    <input type="radio" id="bitterness-5" name="bitterness" value="very bitter" {{isSameValue log.bitterness "very bitter"}}>
+    <label for="bitterness">Very bitter</label>
+</div>
+
+<p>Flavor Profile</p>
+<div>
+    <input type="checkbox" id="fruity-profile" name="flavorProfile" value="fruity" {{isValueIncluded log.flavorProfile "fruity"}}>
+    <label for="flavorProfile">Fruity</label>
+</div>
+<div>
+    <input type="checkbox" id="acidic-profile" name="flavorProfile" value="acidic" {{isValueIncluded log.flavorProfile "acidic"}}>
+    <label for="flavorProfile">Acidic</label>
+</div>
+<div>
+    <input type="checkbox" id="nutty-profile" name="flavorProfile" value="nutty" {{isValueIncluded log.flavorProfile "nutty"}}>
+    <label for="flavorProfile">Nutty</label>
+</div>
+<div>
+    <input type="checkbox" id="sweet-profile" name="flavorProfile" value="sweet" {{isValueIncluded log.flavorProfile "sweet"}}>
+    <label for="flavorProfile">Sweet</label>
+</div>
+<div>
+    <input type="checkbox" id="floral-profile" name="flavorProfile" value="floral" {{isValueIncluded log.flavorProfile "floral"}}>
+    <label for="flavorProfile">Floral</label>
+</div>
+<div>
+    <input type="checkbox" id="burned-profile" name="flavorProfile" value="burned" {{isValueIncluded log.flavorProfile "burned"}} >
+    <label for="flavorProfile">Burned</label>
+</div>
+
+<label for="log-description">Notes</label>
+<input type="textarea" id="log-description" placeholder="add a few notes about your log" name="description" value="{{log.description}}">
+
+</div>
+
+<br>
+<button>Edit log</button> || <a href="/collection/logs">back</a>

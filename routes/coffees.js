@@ -11,7 +11,7 @@ router.post("/create", async (req, res, next) => {
     const newCoffee = req.body;
     console.log(newCoffee);
     await Coffee.create(newCoffee);
-    res.redirect("/collection");
+    res.redirect("/collection/coffees");
   } catch (err) {
     next(err);
   }

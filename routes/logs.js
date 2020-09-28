@@ -5,6 +5,7 @@ const Technique = require("../models/Technique");
 const Coffee = require("../models/Coffee");
 const Log = require("../models/Log");
 
+// C 
 router.get("/create", async (req, res, next) => {
   try {
     const techniques = await Technique.find();
@@ -25,6 +26,7 @@ router.post("/create", async (req, res, next) => {
   }
 });
 
+// R
 router.get("/:id", async (req, res, next) => {
   try {
     const logID = req.params.id;
@@ -32,6 +34,38 @@ router.get("/:id", async (req, res, next) => {
       .populate("brewMethod")
       .populate("coffee");
     res.render("logs/log_details", { log });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// U
+router.get("/:id/edit", async (req, res, next) => {
+  try {
+    res.render("./logs/edit_log", {
+      log: await Log.findById(req.params.id),
+      techniques : await Technique.find(),
+      coffees: await Coffee.find(),
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.post("/:id/edit", async (req, res, next) => {
+  try {
+    await Log.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect("/collection/logs");
+  } catch (err) {
+    next(err);
+  }
+});
+
+//D
+router.get("/:id/delete", async (req, res, next) => {
+  try {
+    await Log.findByIdAndDelete(req.params.id);
+    res.redirect("/collection/logs");
   } catch (err) {
     next(err);
   }
