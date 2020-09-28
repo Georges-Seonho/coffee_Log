@@ -9,7 +9,7 @@ router.post("/create", (req, res, next) => {
     const newCoffee = req.body;
     console.log(newCoffee);
     Coffee.create(newCoffee);
-    res.redirect("/");
+    res.redirect("/collection");
   } catch (err) {
     next(err);
   }
@@ -25,5 +25,22 @@ router.post("/api/create", (req, res, next) => {
     next(err);
   }
 });
+
+//R
+
+//U 
+router.get('/create', (req, res, next) => res.render('./coffees/edit_coffee'));
+
+router.post('/create', (req, res, next) => {
+    try {
+        Coffee.create(req.body);
+        res.redirect('/collection');
+    }
+    catch(err) { next(err);
+    }
+});
+
+//D
+
 
 module.exports = router;

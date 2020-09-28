@@ -1,0 +1,14 @@
+<div>
+    <h2>{{formatDate this.date}}</h2>
+    <h3>{{this.brewTime}}sec || {{this.brewMethod.name}} || {{this.coffee.name}} from {{this.coffee.country}}</h3>
+    <h4>{{this.grindSize}}</h4>
+    <ul>
+        <li>acidity : {{this.acidity}}</li>
+        <li>intensity : {{this.intensity}}</li>
+        <li>bitterness : {{this.bitterness}}</li>
+        <li>flavorProfile : {{this.flavorProfile}}</li>
+    </ul>
+    <a href="/logs/{{this._id}}/edit">edit</a> ||
+    <a href="/logs/{{this._id}}/delete">delete</a>
+</div>
+<br>

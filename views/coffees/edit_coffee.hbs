@@ -1,0 +1,80 @@
+<form action="/coffee/create" method="POST">
+
+    <label for="name">Name</label>
+    <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="{{this.name}}">
+    <br>
+
+    <label for="country">Country</label>
+    <input id="country" name="country" placeholder="Simada" type="text" required value="{{this.country}}">
+    <br>
+
+    <label for="region">Region</label>
+    <input id="region" name="region" placeholder="Ethiopia" type="text" value="{{this.region}}">
+    <br>
+
+    <legend>Drying Method</legend>
+    <label>
+        <input type="radio" name="dryingMethod" value="humid - washed" required>
+        Humid - washed
+    </label><br>
+
+    <label>
+        <input type="radio" name="dryingMethod" value="medium roast">
+        Naturally dried
+    </label><br>
+
+    <label for="altitude">Altitude</label>
+    <input id="altitude" name="altitude" placeholder="1000" type="number" value="1500">
+    <br>
+
+    <legend>Roast</legend>
+    <label>
+        <input type="radio" name="roast" value="light roast" required>
+        Light roast
+    </label><br>
+
+    <label>
+        <input type="radio" name="roast" value="medium roast" required>
+        Medium roast
+    </label><br>
+
+    <label>
+        <input type="radio" name="roast" value="medium dark roast" required>
+        Medium dark roast
+    </label><br>
+
+    <label>
+        <input type="radio" name="roast" value="dark roast" required>
+        Dark roast
+    </label><br>
+
+    <br>
+
+    <label for="flavorProfile">FlavorProfile</label>
+    <div>
+        <input id="fruity" name="flavorProfile" type="checkbox" value="fruity">
+        <label for="fruity">Fruity</label>
+    </div>
+    <div>
+        <input id="acidic" name="flavorProfile" type="checkbox" value="acidic">
+        <label for="acidic">Acidic</label>
+    </div>
+    <div>
+        <input id="nutty" name="flavorProfile" type="checkbox" value="nutty">
+        <label for="nutty">Nutty</label>
+    </div>
+    <div>
+        <input id="sweet" name="flavorProfile" type="checkbox" value="sweet">
+        <label for="sweet">Sweet</label>
+    </div>
+    <div>
+        <input id="floral" name="flavorProfile" type="checkbox" value="floral">
+        <label for="floral">Floral</label>
+    </div>
+    <div>
+        <input id="burned" name="flavorProfile" type="checkbox" value="burned">
+        <label for="burned">Burned</label>
+    </div>
+    <br>
+    <button>Submit</button>
+</form>

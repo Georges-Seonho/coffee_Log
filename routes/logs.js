@@ -18,9 +18,8 @@ router.get("/create", async (req, res, next) => {
 router.post("/create", async (req, res, next) => {
   try {
     const newLog = req.body;
-    console.log(newLog);
     await Log.create(newLog);
-    res.redirect("/collection");
+    res.redirect("/collection/logs");
   } catch (err) {
     next(err);
   }
