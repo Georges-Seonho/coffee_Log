@@ -3,4 +3,15 @@ create js script to toggle "hidden" class on both when "next" btn is clicked --}
 
 <h1>Register a new log</h2>
 
-{{> form_log_tech}}
+
+    <form class="form" action="/logs/create" method="POST">
+
+        <div id="form-log-tech-page" class="form">
+            {{> form_log_tech}}
+        </div>
+
+        <div id="form-log-feedback-page" class="form hidden">
+            {{> form_log_feedback}}
+        </div>
+
+    </form>

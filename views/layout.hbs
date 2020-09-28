@@ -6,10 +6,13 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel='stylesheet' href='/stylesheets/reset.css' />
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  {{#each js}}
+  <script type="module" src="/js/{{this}}.js"></script>
+  {{/each}}
 </head>
 
 <body>
-  
+
   {{> navbar}}
 
   {{{body}}}

@@ -1,28 +1,57 @@
-<form class="form" action="/logs/create" method="POST">
+<label for="date">Date</label>
+<input type="date" id="date" name="date" required>
 
-    <label for="date">Date</label>
-    <input type="date" id="date" name="date">
+<label for="brew-time">Brew time</label>
+<input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime" required>
 
-    <label for="brew-time">Brew time</label>
-    <input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime">
+<label for="brew-method">Brew method</label>
+<select name="brewMethod" id="brew-method" required>
+    {{#each techniques}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+</select>
 
-    <label for="brew-method">Brew method</label>
-    <select name="brewMethod" id="brew-method">
-        {{#each techniques}}
-        <option value="{{this._id}}">{{this.name}}</option>
-        {{/each}}
-    </select>
+<label for="coffee">Coffee</label>
+<select name="coffee" id="coffee" required>
+    {{#each coffees}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+</select>
+<a>add a new coffee</a> 
+{{!-- fake btn to toggle hidden class on "add a new coffee" div --}}
 
-    <label for="coffee">Coffee</label>
-    <select name="coffee" id="coffee">
-        {{#each coffees}}
-        <option value="{{this._id}}">{{this.name}}</option>
-        {{/each}}
-    </select>
+<label for="coffee-qty">Ground coffee</label>
+<input type="number" id="coffee-qty" placeholder="gr" name="coffeeQty" required>
 
+<label for="water-qty">Water</label>
+<input type="number" id="water-qty" placeholder="gr" name="waterQty" required>
 
+<p>Grind size</p>
 
+<div>
+    <input type="radio" id="grind-size-1" name="grindSize" value="1" checked required>
+    <label for="grind-size">Coarse</label>
+</div>
 
-    <button class="btn">Create</button>
+<div>
+    <input type="radio" id="grind-size-2" name="grindSize" value="2">
+    <label for="grind-size">Medium</label>
+</div>
 
-</form>
+<div>
+    <input type="radio" id="grind-size-3" name="grindSize" value="3">
+    <label for="grind-size">Fine</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-4" name="grindSize" value="4">
+    <label for="grind-size">Extra fine</label>
+</div>
+
+<div>
+    <input type="radio" id="grind-size-5" name="grindSize" value="5">
+    <label for="grind-size">Turkish</label>
+</div>
+
+<a id="new-log-next-btn">Next</a>
+{{!-- a fake btn that toggles hidden class for next form page --}}

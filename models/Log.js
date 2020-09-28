@@ -35,7 +35,7 @@ const logSchema = new Schema({
     enum: [5, 4, 3, 2, 1], // 1 = not bitter vs 5 = very bitter
   },
   flavorProfile: {
-    type: String,
+    type: [String],
     enum: ["fruity", "acidic", "nutty", "sweet", "floral", "burned"],
   },
   description: String,
