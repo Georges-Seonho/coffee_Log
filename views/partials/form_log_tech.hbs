@@ -1,7 +1,26 @@
 <form class="form" action="/logs/create" method="POST">
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date">
+
+    <label for="brew-time">Brew time</label>
+    <input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime">
+
+    <label for="brew-method">Brew method</label>
+    <select name="brewMethod" id="brew-method">
+        {{#each techniques}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+    <label for="coffee">Coffee</label>
+    <select name="coffee" id="coffee">
+        {{#each coffees}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+
 
 
     <button class="btn">Create</button>
