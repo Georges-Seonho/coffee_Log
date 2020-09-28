@@ -3,4 +3,29 @@
     - one with route to fetch all coffees and send all coffees (as object)
     - one to fetch all logs and send all logs 
 - create a {{each}} loop on that create cards:
-    - if object send is coffee > call coffee partial inside the loop
+    - if object send is coffee > call coffee partial inside the loop --}}
+<div>
+    <a href="/collection/logs">Logs</a> || 
+    <a href="/collection/coffees">Coffees</a> ||
+    <a href="/collection/users">Users</a> || 
+    <a href="/collection/techniques">Techniques</a> 
+</div>
+
+{{#each logs}}
+{{> log_card}}
+{{/each}}
+
+{{#each coffees}}
+{{> coffee_card}}
+{{/each}}
+
+{{#each users}}
+{{> user_card }}
+{{/each}}
+
+{{#each techniques}}
+{{> technique_card }}
+{{/each}}
+
+
+
