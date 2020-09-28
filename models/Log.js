@@ -15,24 +15,24 @@ const logSchema = new Schema({
   coffeeQty: Number,
   waterQty: Number,
   grindSize: {
-    type: Number,
-    enum: [1, 2, 3, 4, 5], // 1 = biggest vs 5 = smallest
+    type: String,
+    enum: ["coarse", "medium", "fine", "extra fine", "turkish"],
   },
   satisfaction: {
     type: Number,
     enum: [1, 2, 3, 4, 5], // 1 = not happy vs 5 = really happy
   },
   acidity: {
-    type: Number,
-    enum: [5, 4, 3, 2, 1], // 1 = not acid vs 5 = very acid
+    type: String,
+    enum: ["not acid", "a little acid", "neutral", "acid", "very acid"],
   },
   intensity: {
-    type: Number,
-    enum: [5, 4, 3, 2, 1], // 1 = not intense vs 5 = very intense
+    type: String,
+    enum: ["light", "moderate", "medium", "strong", "very strong"],
   },
   bitterness: {
-    type: Number,
-    enum: [5, 4, 3, 2, 1], // 1 = not bitter vs 5 = very bitter
+    type: String,
+    enum: ["not bitter", "a little bitter", "neutral", "bitter", "very bitter"],
   },
   flavorProfile: {
     type: [String],
