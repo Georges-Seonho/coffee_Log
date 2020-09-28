@@ -1,0 +1,14 @@
+<form method="post" action="/auth/signin" method="post">
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="foo@gmail.com" name="email" required value="foo@gmail.com">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" required value="123456789">
+    </div>
+    <button>Signin</button>
+    {{error}}
+</form>
+
+<p>No account yet? <a href="/auth/signup">Signup</a></p>

@@ -3,12 +3,12 @@ var router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 
+router.get("/signin", (req, res, next) => {
+  res.render("auth/signin");
+});
+
 router.get("/signup", (req, res, next) => {
-  try {
-    res.render("auth/signup");
-  } catch (err) {
-    next(err);
-  }
+  res.render("auth/signup");
 });
 
 router.post("/signup", async (req, res, next) => {
