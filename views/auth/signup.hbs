@@ -1,0 +1,20 @@
+<form method="post" action="/auth/signup" method="post">
+    <div>
+        <label for="firstname">First name</label>
+        <input id="firstname" type="text" placeholder="Albert" name="firstname" required value="yo">
+    </div>
+    <div>
+        <label for="lastname">Last name</label>
+        <input id="lastname" type="text" placeholder="Dupont" name="lastname" required value="foo">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="foo@gmail.com" name="email" required value="foo@gmail.com">
+        {{error}}
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" required value="123456789">
+    </div>
+    <button>Create Account</button>
+</form>
