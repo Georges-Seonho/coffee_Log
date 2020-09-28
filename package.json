@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www -e hbs,js",
-    "seed": "node ./bin/seeds.js"
+    "seed": "node ./bin/seeds.js",
+    "coffeeseed": "node ./bin/coffee.seed.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",

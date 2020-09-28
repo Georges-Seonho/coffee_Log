@@ -18,7 +18,7 @@ const coffeeSchema = new Schema({
     enum: ["light roast", "medium roast", "medium dark roast", "dark roast"],
   },
   flavorProfile: {
-    type: String,
+    type: [String],
     enum: ["fruity", "acidic", "nutty", "sweet", "floral", "burned"],
   },
   image: String,
