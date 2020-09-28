@@ -1,0 +1,21 @@
+<div>
+    <h2>{{formatDate log.date}}</h2>
+    <h3>Process</h3>
+    <p>{{log.brewTime}}sec || {{log.brewMethod.name}} || Ground coffee:{{log.coffeeQty}}gr || Water: {{log.waterQty}}gr || Grind size: {{log.grindSize}} </p>
+    <h3>Coffee</h3>
+    <p>{{log.coffee.name}} from {{log.coffee.country}}</p>
+
+    <h4>satisfaction: {{log.satisfaction}}</h4>
+    <ul>
+        <li>acidity : {{log.acidity}}</li>
+        <li>intensity : {{log.intensity}}</li>
+        <li>bitterness : {{log.bitterness}}</li>
+        <li>flavorProfile : {{log.flavorProfile}}</li>
+    </ul>
+    <p>Notes:<br>
+        {{log.description}}
+    </p>
+    <a href="/logs/{{log._id}}/edit">edit</a> ||
+    <a href="/logs/{{log._id}}/delete">delete</a>
+</div>
+<br>

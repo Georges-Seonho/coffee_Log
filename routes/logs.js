@@ -25,4 +25,16 @@ router.post("/create", async (req, res, next) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const logID = req.params.id;
+    const log = await Log.findById({ _id: logID })
+      .populate("brewMethod")
+      .populate("coffee");
+    res.render("logs/log_details", { log });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

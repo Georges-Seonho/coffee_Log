@@ -1,7 +1,9 @@
 <div>
     <h2>{{formatDate this.date}}</h2>
-    <h3>{{this.brewTime}}sec || {{this.brewMethod.name}} || {{this.coffee.name}} from {{this.coffee.country}}</h3>
-    <h4>{{this.grindSize}}</h4>
+    <a href="/logs/{{this._id}}">
+        <h3>{{this.brewTime}}sec || {{this.brewMethod.name}} || {{this.coffee.name}} from {{this.coffee.country}}</h3>
+    </a>
+    <h4>{{this.satisfaction}}</h4>
     <ul>
         <li>acidity : {{this.acidity}}</li>
         <li>intensity : {{this.intensity}}</li>
