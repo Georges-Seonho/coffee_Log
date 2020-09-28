@@ -4,14 +4,10 @@ const formLogTechPage = document.getElementById("form-log-tech-page");
 const formLogFeedbackPage = document.getElementById("form-log-feedback-page");
 const addNewCoffeeBtn = document.getElementById("add-new-coffee-btn");
 const addNewCoffeePage = document.getElementById("add-new-coffee");
-
-const inputName = document.getElementById("coffee-name");
-const inputCountry = document.getElementById("coffee-country");
-const inputRegion = document.getElementById("coffee-region");
-const inputAltitude = document.getElementById("coffee-altitude")
-
-const saveCoffeeNewLogBtn = document.getElementById("save-coffee-new-log");
+const formCoffee = document.getElementById("create-new-coffee");
 const saveCoffeeSubmitBtn = document.getElementById("save-coffee-btn");
+const flavorProfile = document.querySelectorAll(".flavorProfile");
+const newCoffeeBackBtn = document.getElementById("new-coffee-back-btn");
 
 function changePage() {
   formLogFeedbackPage.classList.toggle("hidden");
@@ -22,35 +18,63 @@ function changePage() {
 function displayNewCoffeePage() {
   formLogTechPage.classList.toggle("hidden");
   addNewCoffeePage.classList.toggle("hidden");
-  saveCoffeeNewLogBtn.classList.toggle("hidden");
-  saveCoffeeSubmitBtn.classList.toggle("hidden");
+  newCoffeeBackBtn.classList.toggle("hidden");
 }
 
-function createCoffee() {
+let newCoffee = {};
+
+function createNewCoffeeObject(event) {
+  const { name, value, type } = event.target;
+  newCoffee[name] = value;
+
+  let flavorProfileSelected = [];
+
+  flavorProfile.forEach((profile) => {
+    if (profile.checked) {
+      let currentProfile = profile.value;
+      flavorProfileSelected.push(currentProfile);
+      console.log(flavorProfileSelected);
+    }
+  });
+  newCoffee["flavorProfile"] = flavorProfileSelected;
+  console.log(newCoffee);
+}
+
+function createCoffee(event) {
+  event.preventDefault();
   // go back to new log page
   addNewCoffeePage.classList.toggle("hidden");
   formLogTechPage.classList.toggle("hidden");
 
-  //loop through drying method, flavor and roast => if isChecked, save value into a const (ex: selectedRoast) => use it for the post request
-
   axios
-    .post("/coffee/create", {
-      name: inputName.value,
-      country: inputCountry.value,
-      region: inputRegion.value,
-      altitude: inputAltitude.value
-      // do this for all create coffee input...
-    })
-    .then((apiResponse) => {
-      console.log(apiResponse);
-      // add the new coffee to the list...
+    .post("/coffee/api/create", newCoffee)
+    .then((result) => {
+      console.log(result);
+      const coffeesContainer = document.getElementById("coffee");
+      const coffeeOption = createCoffeeNode(result.data);
+      coffeesContainer.appendChild(coffeeOption);
+      newCoffee = {};
     })
     .catch((apiError) => {
       console.log(apiError);
     });
 }
 
+function createCoffeeNode(coffee) {
+  const option = document.createElement("option");
+  option.value = coffee._id;
+  option.textContent = coffee.name;
+  return option;
+}
+
 newLogNextBtn.addEventListener("click", changePage);
 newLogBackBtn.addEventListener("click", changePage);
 addNewCoffeeBtn.addEventListener("click", displayNewCoffeePage);
-saveCoffeeNewLogBtn.addEventListener("click", createCoffee);
+newCoffeeBackBtn.addEventListener("click", displayNewCoffeePage);
+saveCoffeeSubmitBtn.addEventListener("click", (event) => {
+  createCoffee(event);
+});
+
+formCoffee.onchange = (event) => {
+  createNewCoffeeObject(event);
+};
