@@ -1,4 +1,4 @@
-<form action="/coffee/create" method="POST">
+<form action="/coffee/{{coffee._id}}/edit" method="POST">
 
     <label for="name">Name</label>
     <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="{{coffee.name}}">
@@ -13,38 +13,39 @@
     <br>
 
     <legend>Drying Method</legend>
+
     <label>
-        <input type="radio" name="dryingMethod" value="humid - washed" required>
+        <input type="radio" name="dryingMethod" value="humid - washed" {{isSameValue coffee.dryingMethod "humid - washed"}} required>
         Humid - washed
     </label><br>
 
     <label>
-        <input type="radio" name="dryingMethod" value="medium roast">
+        <input type="radio" name="dryingMethod" value="naturally dried" {{isSameValue coffee.dryingMethod "naturally dried"}}>
         Naturally dried
     </label><br>
 
     <label for="altitude">Altitude</label>
-    <input id="altitude" name="altitude" placeholder="1000" type="number" value="1500">
+    <input id="altitude" name="altitude" placeholder="1000" type="number" value="{{coffee.altitude}}">
     <br>
 
     <legend>Roast</legend>
     <label>
-        <input type="radio" name="roast" value="light roast" required>
+        <input type="radio" name="roast" value="light roast" {{isSameValue coffee.roast "light roast"}} equired>
         Light roast
     </label><br>
 
     <label>
-        <input type="radio" name="roast" value="medium roast" required>
+        <input type="radio" name="roast" value="medium roast" {{isSameValue coffee.roast "medium roast"}}>
         Medium roast
     </label><br>
 
     <label>
-        <input type="radio" name="roast" value="medium dark roast" required>
+        <input type="radio" name="roast" value="medium dark roast" {{isSameValue coffee.roast "medium dark roast"}}>
         Medium dark roast
     </label><br>
 
     <label>
-        <input type="radio" name="roast" value="dark roast" required>
+        <input type="radio" name="roast" value="dark roast" {{isSameValue coffee.roast "dark roast"}}>
         Dark roast
     </label><br>
 
@@ -52,29 +53,29 @@
 
     <label for="flavorProfile">FlavorProfile</label>
     <div>
-        <input id="fruity" name="flavorProfile" type="checkbox" value="fruity">
+        <input id="fruity" name="flavorProfile" type="checkbox" value="fruity" {{isValueIncluded coffee.flavorProfile "fruity"}}>
         <label for="fruity">Fruity</label>
     </div>
     <div>
-        <input id="acidic" name="flavorProfile" type="checkbox" value="acidic">
+        <input id="acidic" name="flavorProfile" type="checkbox" value="acidic" {{isValueIncluded coffee.flavorProfile "acidic"}}>
         <label for="acidic">Acidic</label>
     </div>
     <div>
-        <input id="nutty" name="flavorProfile" type="checkbox" value="nutty">
+        <input id="nutty" name="flavorProfile" type="checkbox" value="nutty" {{isValueIncluded coffee.flavorProfile "nutty"}}>
         <label for="nutty">Nutty</label>
     </div>
     <div>
-        <input id="sweet" name="flavorProfile" type="checkbox" value="sweet">
+        <input id="sweet" name="flavorProfile" type="checkbox" value="sweet" {{isValueIncluded coffee.flavorProfile "sweet"}}>
         <label for="sweet">Sweet</label>
     </div>
     <div>
-        <input id="floral" name="flavorProfile" type="checkbox" value="floral">
+        <input id="floral" name="flavorProfile" type="checkbox" value="floral" {{isValueIncluded coffee.flavorProfile "floral"}}>
         <label for="floral">Floral</label>
     </div>
     <div>
-        <input id="burned" name="flavorProfile" type="checkbox" value="burned">
+        <input id="burned" name="flavorProfile" type="checkbox" value="burned" {{isValueIncluded coffee.flavorProfile "burned"}}>
         <label for="burned">Burned</label>
     </div>
     <br>
-    <button>Save changes</button>
+    <button>Save changes</button> || <a href="/collection/coffees">back</a>
 </form>
