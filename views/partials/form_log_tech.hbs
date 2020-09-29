@@ -1,30 +1,42 @@
-<label for="date">Date</label>
-<input type="date" id="date" name="date" required>
+<div>
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+</div>
 
-<label for="brew-time">Brew time</label>
-<input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime" required>
+<div>
+    <label for="brew-time">Brew time</label>
+    <input type="number" id="brew-time" placeholder="in seconds/minutes" name="brewTime" required>
+</div>
 
-<label for="brew-method">Brew method</label>
-<select name="brewMethod" id="brew-method" required>
-    {{#each techniques}}
-    <option value="{{this._id}}">{{this.name}}</option>
-    {{/each}}
-</select>
+<div>
+    <label for="brew-method">Brew method</label>
+    <select name="brewMethod" id="brew-method" required>
+        {{#each techniques}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+</div>
 
-<label for="coffee">Coffee</label>
-<select name="coffee" id="coffee" required>
-    {{#each coffees}}
-    <option value="{{this._id}}">{{this.name}}</option>
-    {{/each}}
-</select>
-<a id="add-new-coffee-btn">add a new coffee</a> 
+<div>
+    <label for="coffee">Coffee</label>
+    <select name="coffee" id="coffee" required>
+        {{#each coffees}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+    <a id="add-new-coffee-btn">add a new coffee</a>
+</div>
 {{!-- fake btn to toggle hidden class on "add a new coffee" div --}}
+<div>
+    <label for="coffee-qty">Ground coffee</label>
+    <input type="number" id="coffee-qty" placeholder="gr" name="coffeeQty" required>
+</div>
 
-<label for="coffee-qty">Ground coffee</label>
-<input type="number" id="coffee-qty" placeholder="gr" name="coffeeQty" required>
+<div>
+    <label for="water-qty">Water</label>
+    <input type="number" id="water-qty" placeholder="gr" name="waterQty" required>
+</div>
 
-<label for="water-qty">Water</label>
-<input type="number" id="water-qty" placeholder="gr" name="waterQty" required>
 
 <p>Grind size</p>
 
