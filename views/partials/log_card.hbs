@@ -1,4 +1,4 @@
-<div>
+<div class="card">
     <h2>{{formatDate this.date}}</h2>
     <a href="/logs/{{this._id}}">
         <h3>{{this.brewTime}}sec || {{this.brewMethod.name}} || {{this.coffee.name}} from {{this.coffee.country}}</h3>
@@ -10,7 +10,8 @@
         <li>bitterness : {{this.bitterness}}</li>
         <li>flavorProfile : {{this.flavorProfile}}</li>
     </ul>
+    <div>
     <a href="/logs/{{this._id}}/edit">edit</a> ||
     <a href="/logs/{{this._id}}/delete">delete</a>
+    </div>
 </div>
-<br>

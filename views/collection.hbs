@@ -4,7 +4,7 @@
     - one to fetch all logs and send all logs 
 - create a {{each}} loop on that create cards:
     - if object send is coffee > call coffee partial inside the loop --}}
-<div>
+<div class="collection-nav">
     <a href="/collection/logs">Logs</a> || 
     <a href="/collection/coffees">Coffees</a> 
     {{#if isAdmin}}
@@ -13,6 +13,7 @@
     {{/if}}
 </div>
 
+<div class="cards-container">
 {{#each logs}}
 {{> log_card}}
 {{/each}}
@@ -28,6 +29,6 @@
 {{#each techniques}}
 {{> technique_card }}
 {{/each}}
-
+</div>
 
 
