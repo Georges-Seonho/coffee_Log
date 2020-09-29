@@ -13,11 +13,17 @@
 
     {{#if isAdmin}}
     <p>Is admin?</p>
-    <label for="role">No</label>
-    <input name="role" type="radio" value="user" {{isSameValue user.role "user"}}>
+    <div>
+        <label for="role">No</label>
+        <input name="role" type="radio" value="user" {{isSameValue user.role "user"}}>
 
-    <label for="role">Yes</label>
-    <input name="role" type="radio" value="admin" {{isSameValue user.role "admin"}}>
+    </div>
+
+    <div>
+        <label for="role">Yes</label>
+        <input name="role" type="radio" value="admin" {{isSameValue user.role "admin"}}>
+
+    </div>
 
     </select>
 
