@@ -1,9 +1,14 @@
-<div>
-    <img src="{{currentUser.avatar}}" alt="user avatar">
-    <h1>{{currentUser.firstname}} {{currentUser.lastname}} </h1>
-    <p>{{currentUser.email}}</p>
-
-    <a href="/user/{{currentUser._id}}/edit">
-        <button>edit</button>
-    </a>
+<div class="profile-container">
+    <div class="infos">
+        <div class="user-infos-and-pic">
+            <img src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg" alt="user avatar">
+            <div class="user-infos">
+                <h1>{{currentUser.firstname}} {{currentUser.lastname}} </h1>
+                <p>{{currentUser.email}}</p>
+                <a href="/user/{{currentUser._id}}/edit">
+                    <button class="profile-btn red-border">edit</button>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
