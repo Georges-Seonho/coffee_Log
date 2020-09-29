@@ -1,16 +1,16 @@
-    <form class="form-container" action="/logs/create" method="POST">
+    <form class="form-container" id="form-new-log" action="/logs/create" method="POST">
 
         <div id="form-log-tech-page" class="form">
             {{> form_log_tech}}
         </div>
 
-        <a id="new-log-back-btn" class="hidden">go back</a>
-        <div id="form-log-feedback-page" class="hidden">
+
+        <div id="form-log-feedback-page" class="hidden form">
             {{> form_log_feedback}}
         </div>
 
     </form>
     <a id="new-coffee-back-btn" class="hidden">go back</a>
-    <div id="add-new-coffee" class="hidden">
+    <div id="add-new-coffee" class="form-container hidden">
         {{> form_coffee}}
     </div>

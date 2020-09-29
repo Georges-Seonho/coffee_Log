@@ -21,6 +21,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn {
@@ -38,6 +39,12 @@ a {
 
 .red-border {
   border: 2px solid var(--red);
+  color: var(--red);
+}
+
+.red-border:hover {
+  background-color: var(--red);
+  color: white;
 }
 
 .hidden {

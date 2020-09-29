@@ -40,7 +40,7 @@
   border: 2px solid var(--black);
   display: flex;
   align-items: center;
-  width: 40vw;
+  width: 50vw;
 }
 
 .form-label {
@@ -53,11 +53,54 @@
 .form-input {
   background-color: var(--gray);
   border: none;
-  padding: 1rem;
+  padding-left: 1rem;
   width: 85%;
 }
 
 .form-btn {
   max-width: 20%;
   text-align: center;
+}
+
+.btn-new-coffee-container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 50vw;
+}
+
+.notes-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-label {
+  background-color: var(--black);
+  color: var(--light-gray);
+  padding: 1rem;
+}
+
+.notes-input {
+  background-color: var(--light-gray);
+  border: none;
+  padding: 20px;
+}
+
+.flex-btn-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.flex-btn-container a {
+  color: var(--red);
+}
+
+#add-new-coffee-btn {
+  padding: 0.7rem;
+  font-size: 1.3rem;
+}
+
+#new-log-next-btn:hover {
+  background-color: var(--red);
+  color: white;
 }
