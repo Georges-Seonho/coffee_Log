@@ -1,7 +1,8 @@
 .form-container {
   height: 85%;
+  width: 60vw;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   background-color: var(--light-gray);
@@ -41,6 +42,7 @@
   display: flex;
   align-items: center;
   width: 50vw;
+  border-radius: 5px;
 }
 
 .form-label {
@@ -77,12 +79,14 @@
   background-color: var(--black);
   color: var(--light-gray);
   padding: 1rem;
+  border-radius: 5px;
 }
 
 .notes-input {
   background-color: var(--light-gray);
   border: none;
   padding: 20px;
+  border-radius: 5px;
 }
 
 .flex-btn-container {
