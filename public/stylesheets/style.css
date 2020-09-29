@@ -1,6 +1,7 @@
 @import url("../stylesheets/modules/navbar.css");
 @import url("../stylesheets/modules/mod.form.css");
 @import url("../stylesheets/modules/mod.card.css");
+@import url("../stylesheets/modules/mod.auth.css");
 @import url("../stylesheets/vars.css");
 
 html {
