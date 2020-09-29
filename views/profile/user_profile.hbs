@@ -1,0 +1,9 @@
+<div>
+    <img src="{{currentUser.avatar}}" alt="user avatar">
+    <h1>{{currentUser.firstname}} {{currentUser.lastname}} </h1>
+    <p>{{currentUser.email}}</p>
+
+    <a href="/user/{{currentUser._id}}/edit">
+        <button>edit</button>
+    </a>
+</div>

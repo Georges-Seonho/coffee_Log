@@ -1,0 +1,15 @@
+<h1> Edit your profile</h1>
+
+<form class="form" action="/user/{{user._id}}/edit" method="post">
+
+    <label for="firstname">Firstname</label>
+    <input type="text" id="firstname" name="firstname" value="{{user.firstname}}">
+
+    <label for="lastname">Lastname</label>
+    <input type="text" id="lastname" name="lastname" value="{{user.lastname}}">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="{{user.email}}">
+
+    <button>save changes</button>
+</form>

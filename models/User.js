@@ -1,3 +1,4 @@
+const { urlencoded } = require("express");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -7,7 +8,10 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   role: { type: String, enum: ["admin", "user"], default: "user" },
-  avatar: String,
+  avatar: {
+    type: String,
+    default: "/public/img/profile_picture.png",
+  },
   coffeeCollection: { type: Schema.Types.ObjectId, ref: "Coffee" },
 });
 
