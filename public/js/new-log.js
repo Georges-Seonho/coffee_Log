@@ -8,6 +8,7 @@ const formCoffee = document.getElementById("create-new-coffee");
 const saveCoffeeSubmitBtn = document.getElementById("save-coffee-btn");
 const flavorProfile = document.querySelectorAll(".flavorProfile");
 const newCoffeeBackBtn = document.getElementById("new-coffee-back-btn");
+const formContainer = document.getElementById("form-new-log");
 
 function changePage() {
   formLogFeedbackPage.classList.toggle("hidden");
@@ -19,6 +20,7 @@ function displayNewCoffeePage() {
   formLogTechPage.classList.toggle("hidden");
   addNewCoffeePage.classList.toggle("hidden");
   newCoffeeBackBtn.classList.toggle("hidden");
+  formContainer.classList.toggle("hidden");
 }
 
 let newCoffee = {};
