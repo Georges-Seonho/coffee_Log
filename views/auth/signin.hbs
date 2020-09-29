@@ -1,14 +1,19 @@
-<form method="post" action="/auth/signin" method="post">
-    <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" placeholder="foo@gmail.com" name="email" required value="foo@gmail.com">
+<div class="form-container">
+    <div class="auth-container signin-container">
+        <h1 class="form-title">SIGN IN</h1>
+        <span class="auth-link">{{error}}</span>
+        <form class="form" method="post" action="/auth/signin" method="post">
+            <div class="form-item">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" id="email" type="email" placeholder="foo@gmail.com" name="email" required
+                    value="foo@gmail.com">
+            </div>
+            <div class="form-item">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-input" id="password" type="password" name="password" required value="123456789">
+            </div>
+            <button class="red-background auth-btn form-btn">Signin</button>
+        </form>
+        <p>No account yet?<a class="auth-link" href="/auth/signup"> Signup</a></p>
     </div>
-    <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" required value="123456789">
-    </div>
-    <button>Signin</button>
-    {{error}}
-</form>
- 
-<p>No account yet? <a href="/auth/signup">Signup</a></p>
+</div>

@@ -1,0 +1,26 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.signup-container {
+    height: 65%;
+}
+
+.signin-container {
+    height: 40%;
+}
+
+.auth-link {
+  color: var(--red);
+  text-align: center;
+}
+
+.auth-btn {
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 0 auto;
+  }

@@ -12,7 +12,7 @@ router.post("/signin", async (req, res, next) => {
   const { email, password } = req.body;
   const foundUser = await User.findOne({ email: email });
   if (!foundUser) {
-    res.render("auth/signin", { error: "Invalid credentials" });
+    res.render("auth/signin", { error: 'Invalid credentials'});
   } else {
     const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
