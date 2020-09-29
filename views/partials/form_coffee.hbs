@@ -1,80 +1,89 @@
-<form id="create-new-coffee" action="/coffee/create" method="POST">
+<div class="form-container">
+    <form class="form" id="create-new-coffee" action="/coffee/create" method="POST">
 
-    <label for="name">Name</label>
-    <input id="coffee-name" name="name" placeholder="HEIRLOOM" type="text" required value="Test">
-    <br>
+        <div>
+        <label for="name">Name</label>
+        <input id="coffee-name" name="name" placeholder="HEIRLOOM" type="text" required value="Test">
+        </div>
 
-    <label for="country">Country</label>
-    <input id="coffee-country" name="country" placeholder="Simada" type="text" required value="Test">
-    <br>
+        <div>
+        <label for="country">Country</label>
+        <input id="coffee-country" name="country" placeholder="Simada" type="text" required value="Test">
+        </div>
 
-    <label for="region">Region</label>
-    <input id="coffee-region" name="region" placeholder="Ethiopia" type="text" value="Test">
-    <br>
+        <div>
+        <label for="region">Region</label>
+        <input id="coffee-region" name="region" placeholder="Ethiopia" type="text" value="Test">
+        </div>
 
-    <legend>Drying Method</legend>
-    <label>
-        <input type="radio" name="dryingMethod" value="humid - washed" required>
-        Humid - washed
-    </label><br>
+        <div>
+        <legend>Drying Method</legend>
+        <label>
+            <input type="radio" name="dryingMethod" value="humid - washed" required>
+            Humid - washed
+        </label>
 
-    <label>
-        <input type="radio" name="dryingMethod" value="naturally dried">
-        Naturally dried
-    </label><br>
+        <label>
+            <input type="radio" name="dryingMethod" value="naturally dried">
+            Naturally dried
+        </label>
+        </div>
 
-    <label for="altitude">Altitude</label>
-    <input id="coffee-altitude" name="altitude" placeholder="1000" type="number" value="1500">
-    <br>
+        <div>
+        <label for="altitude">Altitude</label>
+        <input id="coffee-altitude" name="altitude" placeholder="1000" type="number" value="1500">
+        </div>
 
-    <legend>Roast</legend>
-    <label>
-        <input type="radio" name="roast" value="light roast" required>
-        Light roast
-    </label><br>
+        <div>
+        <legend>Roast</legend>
+        <label>
+            <input type="radio" name="roast" value="light roast" required>
+            Light roast
+        </label>
 
-    <label>
-        <input type="radio" name="roast" value="medium roast" required>
-        Medium roast
-    </label><br>
+        <label>
+            <input type="radio" name="roast" value="medium roast" required>
+            Medium roast
+        </label>
 
-    <label>
-        <input type="radio" name="roast" value="medium dark roast" required>
-        Medium dark roast
-    </label><br>
+        <label>
+            <input type="radio" name="roast" value="medium dark roast" required>
+            Medium dark roast
+        </label>
 
-    <label>
-        <input type="radio" name="roast" value="dark roast" required>
-        Dark roast
-    </label><br>
+        <label>
+            <input type="radio" name="roast" value="dark roast" required>
+            Dark roast
+        </label>
+        </div>
+        
 
-    <br>
-
-    <label for="flavorProfile">FlavorProfile</label>
-    <div>
-        <input class="flavorProfile" id="fruity" name="flavorProfile" type="checkbox" value="fruity">
-        <label for="fruity">Fruity</label>
-    </div>
-    <div>
-        <input class="flavorProfile" id="acidic" name="flavorProfile" type="checkbox" value="acidic">
-        <label for="acidic">Acidic</label>
-    </div>
-    <div>
-        <input class="flavorProfile" id="nutty" name="flavorProfile" type="checkbox" value="nutty">
-        <label for="nutty">Nutty</label>
-    </div>
-    <div>
-        <input class="flavorProfile" id="sweet" name="flavorProfile" type="checkbox" value="sweet">
-        <label for="sweet">Sweet</label>
-    </div>
-    <div>
-        <input class="flavorProfile" id="floral" name="flavorProfile" type="checkbox" value="floral">
-        <label for="floral">Floral</label>
-    </div>
-    <div>
-        <input class="flavorProfile" id="burned" name="flavorProfile" type="checkbox" value="burned">
-        <label for="burned">Burned</label>
-    </div>
-    <br>
-    <button id="save-coffee-btn">Submit</button>
-</form>
+        <label for="flavorProfile">FlavorProfile</label>
+        <div>
+            <input class="flavorProfile" id="fruity" name="flavorProfile" type="checkbox" value="fruity">
+            <label for="fruity">Fruity</label>
+        </div>
+        <div>
+            <input class="flavorProfile" id="acidic" name="flavorProfile" type="checkbox" value="acidic">
+            <label for="acidic">Acidic</label>
+        </div>
+        <div>
+            <input class="flavorProfile" id="nutty" name="flavorProfile" type="checkbox" value="nutty">
+            <label for="nutty">Nutty</label>
+        </div>
+        <div>
+            <input class="flavorProfile" id="sweet" name="flavorProfile" type="checkbox" value="sweet">
+            <label for="sweet">Sweet</label>
+        </div>
+        <div>
+            <input class="flavorProfile" id="floral" name="flavorProfile" type="checkbox" value="floral">
+            <label for="floral">Floral</label>
+        </div>
+        <div>
+            <input class="flavorProfile" id="burned" name="flavorProfile" type="checkbox" value="burned">
+            <label for="burned">Burned</label>
+        </div>
+        
+        <button id="save-coffee-btn">Submit</button>
+    </form>
+</div>

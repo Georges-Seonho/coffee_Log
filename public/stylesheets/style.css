@@ -1,4 +1,5 @@
 @import url("../stylesheets/modules/navbar.css");
+@import url("../stylesheets/modules/mod.form.css");
 @import url("../stylesheets/vars.css");
 
 html {
@@ -9,6 +10,9 @@ html {
 
 body {
   font-family: Avenir;
+  width: 95vw;
+  margin: 40px auto auto auto;
+  height: 95vh;
 }
 
 a {

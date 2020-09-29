@@ -1,0 +1,16 @@
+.form-container {
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--gray);
+    border-radius: 15px;
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
