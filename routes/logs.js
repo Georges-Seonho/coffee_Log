@@ -7,7 +7,7 @@ const Coffee = require("../models/Coffee");
 const Log = require("../models/Log");
 
 // C 
-router.get("/create", async (req, res, next) => {
+router.get("/create",requireAuth, async (req, res, next) => {
   try {
     const techniques = await Technique.find();
     const coffees = await Coffee.find();
@@ -28,7 +28,7 @@ router.post("/create", async (req, res, next) => {
 });
 
 // R
-router.get("/:id", async (req, res, next) => {
+router.get("/:id",requireAuth, async (req, res, next) => {
   try {
     const logID = req.params.id;
     const log = await Log.findById({ _id: logID })
@@ -41,7 +41,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // U
-router.get("/:id/edit", async (req, res, next) => {
+router.get("/:id/edit",requireAuth, async (req, res, next) => {
   try {
     res.render("./logs/edit_log", {
       log: await Log.findById(req.params.id),

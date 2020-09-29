@@ -1,6 +1,16 @@
-var express = require("express");
+var express = require('express');
+const User = require('../models/User');
 var router = express.Router();
-const User = require("../models/User");
+
+// D 
+router.get('/:id/delete', async (req, res, next) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.redirect("/collection/users");
+  } catch (err) {
+    next(err);
+  }
+});
 
 /* GET users listing. */
 router.get("/:id", async (req, res, next) => {
