@@ -4,7 +4,6 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  /* text-align: center; */
   background-color: var(--gray);
   border-radius: 15px;
   font-size: 1.5rem;
@@ -41,7 +40,7 @@
   border: 2px solid var(--black);
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 40vw;
 }
 
 .form-label {
