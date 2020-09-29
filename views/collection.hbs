@@ -6,9 +6,11 @@
     - if object send is coffee > call coffee partial inside the loop --}}
 <div>
     <a href="/collection/logs">Logs</a> || 
-    <a href="/collection/coffees">Coffees</a> ||
-    <a href="/collection/users">Users</a> || 
+    <a href="/collection/coffees">Coffees</a> 
+    {{#if isAdmin}}
+    || <a href="/collection/users">Users</a> || 
     <a href="/collection/techniques">Techniques</a> 
+    {{/if}}
 </div>
 
 {{#each logs}}

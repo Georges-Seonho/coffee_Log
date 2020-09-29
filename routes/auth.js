@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const bcrypt = require("bcrypt");
+const requireAuth = require('../middlewares/requireAuth');
 const User = require("../models/User");
 
 router.get("/signin", (req, res, next) => {
@@ -53,7 +54,7 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", requireAuth, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) return next(err);
     res.redirect("/");

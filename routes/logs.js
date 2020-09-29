@@ -1,5 +1,6 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const requireAuth = require('../middlewares/requireAuth');
 
 const Technique = require("../models/Technique");
 const Coffee = require("../models/Coffee");

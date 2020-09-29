@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const requireAuth = require('../middlewares/requireAuth');
 const Coffee = require("../models/Coffee");
 
 
 // C
-router.get("/create", (req, res, next) => res.render("./coffees/new_coffee"));
+router.get("/create", requireAuth, (req, res, next) => res.render("./coffees/new_coffee"));
 
 router.post("/create", async (req, res, next) => {
   try {
@@ -31,7 +32,7 @@ router.post("/api/create", async (req, res, next) => {
 //R NOT NECESSARY
 
 //U
-router.get("/:id/edit", async (req, res, next) => {
+router.get("/:id/edit",requireAuth, async (req, res, next) => {
   try {
     res.render("./coffees/edit_coffee", {
       coffee: await Coffee.findById(req.params.id),

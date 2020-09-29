@@ -43,19 +43,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-// app.use(function (req, res, next) {
-//   if (req.session.currentUser) {
-//     res.locals.isLoggedIn = true;
-//     res.locals.isAdmin = req.session.currentUser.role === "admin";
-//     res.locals.username = req.session.currentUser.username;
-//   } else {
-//     res.locals.isLoggedIn = false;
-//     res.locals.username = null;
-//     res.locals.isAdmin = false;
-//   }
-//   next();
-// });
+//CUSTOM MIDDLEWARES
+app.use(require("./middlewares/exposeLoginStatus"));
 
+//Routers
 app.use("/", require("./routes/index"));
 app.use("/user", require("./routes/users"));
 app.use("/collection", require("./routes/collection"));
