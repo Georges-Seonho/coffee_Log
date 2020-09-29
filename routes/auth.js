@@ -7,6 +7,25 @@ router.get("/signin", (req, res, next) => {
   res.render("auth/signin");
 });
 
+router.post("/signin", async (req, res, next) => {
+  const { email, password } = req.body;
+  const foundUser = await User.findOne({ email: email });
+  if (!foundUser) {
+    res.render("auth/signin", { error: "Invalid credentials" });
+  } else {
+    const isSamePassword = bcrypt.compareSync(password, foundUser.password);
+    if (!isSamePassword) {
+      res.render("auth/signin", { error: "Invalid credentials" });
+    } else {
+      const userObject = foundUser.toObject();
+      delete userObject.password;
+      req.session.currentUser = userObject;
+      console.log(userObject);
+      res.redirect("/");
+    }
+  }
+});
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
@@ -28,7 +47,7 @@ router.post("/signup", async (req, res, next) => {
       email,
       password: hashedPassword,
     });
-    res.redirect("/");
+    res.redirect("/auth/signin");
   } catch (err) {
     next(err);
   }
