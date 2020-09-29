@@ -1,13 +1,11 @@
-<div class="form-container">
-    <h1>Register a new log</h2>
-    <form action="/logs/create" method="POST">
+    <form class="form-container" action="/logs/create" method="POST">
 
         <div id="form-log-tech-page" class="form">
             {{> form_log_tech}}
         </div>
 
         <a id="new-log-back-btn" class="hidden">go back</a>
-        <div id="form-log-feedback-page" class="form hidden">
+        <div id="form-log-feedback-page" class="hidden">
             {{> form_log_feedback}}
         </div>
 
@@ -16,4 +14,3 @@
     <div id="add-new-coffee" class="hidden">
         {{> form_coffee}}
     </div>
-</div>
