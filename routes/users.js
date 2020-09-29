@@ -13,9 +13,13 @@ router.get('/:id/delete', async (req, res, next) => {
 });
 
 /* GET users listing. */
-router.get('/:id', function(req, res, next) {
-  res.render('user-profile');
+router.get("/:id", async (req, res, next) => {
+  try {
+    const currentUser = await User.findById(req.params.id);
+    res.render("user_profile", { currentUser });
+  } catch (err) {
+    next(err);
+  }
 });
-
 
 module.exports = router;
