@@ -1,6 +1,6 @@
 .profile-container {
-  height: 40%;
-  width: 50%;
+  height: 40vh;
+  width: 50vw;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -8,7 +8,7 @@
   background-color: var(--gray);
   border-radius: 15px;
   font-size: 2rem;
-  margin: 20% auto;
+  margin: 15% auto 0;
 }
 
 .infos {
