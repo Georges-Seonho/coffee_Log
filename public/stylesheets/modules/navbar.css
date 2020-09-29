@@ -1,38 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   min-height: 4rem;
   font-size: 1.7rem;
-  padding: 0px 20px 0px 20px;
   margin-bottom: 40px;
 }
 
 #logo {
   font-weight: 600;
-  font-size: 3rem;
+  font-size: 5rem;
+  font-family: "Dr Sugiyama", cursive;
+  letter-spacing: 0.5rem;
 }
 
-.nav .links {
-  min-width: 30%;
-}
-
-.nav-btn {
-  justify-content: space-between;
-  align-items: center;
-}
-
-.links {
+.links-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 25%;
 }
 
-.dropbtn {
-  border: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 10px;
+.links a {
+  margin-right: 10px;
+}
+
+.links {
+  font-weight: 600;
 }
 
 .dropdown {
@@ -44,11 +41,13 @@
   text-align: end;
   display: none;
   position: absolute;
+  top: 22px;
   right: 0px;
-  background-color: var(--light-gray);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--red);
+  min-width: 110px;
   z-index: 1;
+  border-radius: 5px;
+  color: var(--light-gray);
 }
 
 .dropdown-content a {
@@ -56,10 +55,21 @@
   display: block;
 }
 
+.dropdown-content i {
+  font-size: 1.2rem;
+}
+
 .dropdown-content a:hover {
-  background-color: var(--gray);
+  background-color: var(--black);
+  border-radius: 5px;
+  color: var(--light-gray);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.links a:hover {
+  border-bottom: 2px solid var(--red);
+  transition: 0.2s ease-in;
 }

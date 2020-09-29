@@ -1,20 +1,25 @@
 <nav class="nav">
-    <a id="logo" href="/"> Coffee_Log</a>
-    <div class="links">
-        {{#if isLoggedIn}}
-        <div class="nav-btn">
-            <a class="btn red-background" href="/logs/create"> New log</a>
-            <a class="btn red-border" href="/coffee/create"> New coffee</a>
+    <a id="logo" href="/"> Coffee Log</a>
+
+    {{#if isLoggedIn}}
+    <div class="nav-btn">
+        <a class="btn red-border" href="/logs/create"><i class="fas fa-plus-circle"></i> new log</a>
+        <a class="btn red-border" href="/coffee/create"><i class="fas fa-plus-circle"></i> new coffee</a>
+    </div>
+
+    <div class="links-container">
+        <div class="links">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <a class="nav-link" href="/collection/logs"> Collection</a>
         </div>
+
         <div class="dropdown">
-            <p class="dropbtn">{{currentUser.firstname}}</p>
+            <a class="dropbtn">{{currentUser.firstname}}  <i class="fas fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="nav-link" href="/dashboard"> Dashboard</a>
-                <a class="nav-link" href="/collection/logs"> Collection</a>
-                <a class="nav-link" href="/user/{{currentUser._id}}"> Profile</a>
-                <a class="nav-link" href="/auth/logout">Logout</a>
+                <a class="nav-link" href="/user/{{currentUser._id}}"> <i class="fas fa-user"></i> Profile</a>
+                <a class="nav-link" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
+            {{/if}}
         </div>
-        {{/if}}
     </div>
 </nav>

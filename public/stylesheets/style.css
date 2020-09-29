@@ -8,7 +8,7 @@
 html {
   font-size: 10px;
   color: var(--black);
-  background-color: var(--light-gray);
+  background-color: var(--gray);
 }
 
 body {
@@ -25,8 +25,8 @@ a {
 }
 
 .btn {
-  padding: 10px;
-  border-radius: 12px;
+  padding: 5px;
+  border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
 }
