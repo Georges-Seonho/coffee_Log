@@ -10,6 +10,11 @@
     <canvas id="myChart"></canvas>
 </div>
 
-<div>
-    
+<div class="feed-right">
+    <h1 class="feed-title">Community coffee</h1>
+    <div class="feed-content">
+        {{#each coffees}}
+        {{> feed_card}}
+        {{/each}}
+    </div>
 </div>

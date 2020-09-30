@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Log = require("../models/Log");
 const requireAuth = require("../middlewares/requireAuth");
+const Coffee = require("../models/Coffee");
 
-router.get("/", requireAuth, function (req, res, next) {
-  res.render("dashboard", { js: ["chartsJs"] });
+router.get("/", requireAuth, async function (req, res, next) {
+  res.render("dashboard", { coffees: await Coffee.find({}), js: ["chartsJs"] });
 });
 
 router.get("/api/ratioData", async (req, res, next) => {

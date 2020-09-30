@@ -1,3 +1,27 @@
 .chart {
   max-width: 600px;
 }
+
+.feed-right {
+  position: absolute;
+  width: 300px;
+  height: 80vh;
+  overflow:scroll;
+  top: 130px;
+  right: 40px;
+}
+
+.feed-title {
+  position: fixed;
+  width: 100%;
+  background-color: var(--gray);
+  z-index: 10;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.feed-content {
+  position: relative;
+  top: 60px;
+}
