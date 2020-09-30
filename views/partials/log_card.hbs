@@ -1,18 +1,26 @@
 <div class="card">
-    <a href="/logs/{{this._id}}">
+    <div class="date-delete-container">
         <h2>{{formatDate this.date}}</h2>
+        <a class="btn red-background" href="/logs/{{this._id}}/delete"><i class="fas fa-trash"></i></a>
+    </div>
 
-        <h3>{{this.brewTime}}sec || {{this.brewMethod.name}} || {{this.coffee.name}} from {{this.coffee.country}}</h3>
+    <div class="method-container">
+        <img src="" alt="">
+        <h2>{{this.brewMethod.name}}</h2>
+    </div>
+
+    <div class="coffee-used-container">
+        <h2>{{this.coffee.name}} from {{this.coffee.country}}</h2>
+
+    </div>
+
+    <div class="feedback-container">
         <h4>satisfaction: {{this.satisfaction}}/5</h4>
-        <ul>
-            <li>acidity : {{this.acidity}}</li>
-            <li>intensity : {{this.intensity}}</li>
-            <li>bitterness : {{this.bitterness}}</li>
-            <li>flavorProfile : {{this.flavorProfile}}</li>
-        </ul>
-        <div>
-            <a href="/logs/{{this._id}}/edit">edit</a> ||
-            <a href="/logs/{{this._id}}/delete">delete</a>
-        </div>
-    </a>
+
+    </div>
+
+    <div class="edit-btn-container">
+        {{!-- <a class="btn red-background" href="/logs/{{this._id}}/edit">edit</a> --}}
+        <a class="btn red-border" href="/logs/{{this._id}}"><i class="fas fa-eye"></i> details</a>
+    </div>
 </div>
