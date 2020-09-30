@@ -49,12 +49,11 @@
   background-color: var(--light-gray);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 20px;
   border-radius: 15px;
   margin: 5px;
   transition: 0.2s ease-out;
-  cursor: pointer;
   min-height: 200px;
 }
 
@@ -75,6 +74,16 @@
 
 .method-container {
   display: flex;
+  align-items: center;
+}
+
+.method-container h2 {
+  margin-bottom: 5px;
+}
+
+.method-container img {
+  max-width: 40px;
+  margin-right: 5px;
 }
 
 .card:hover {
@@ -84,4 +93,8 @@
 .menu-links a:hover {
   color: var(--red);
   font-weight: 500;
+}
+
+.feedback-container fa-star {
+  color: var(--yellow);
 }

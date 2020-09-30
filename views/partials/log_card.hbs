@@ -1,26 +1,23 @@
 <div class="card">
     <div class="date-delete-container">
-        <h2>{{formatDate this.date}}</h2>
+        <p>{{formatDate this.date}} <i class="fas fa-calendar-day"></i> </p>
         <a class="btn red-background" href="/logs/{{this._id}}/delete"><i class="fas fa-trash"></i></a>
     </div>
 
     <div class="method-container">
-        <img src="" alt="">
-        <h2>{{this.brewMethod.name}}</h2>
-    </div>
-
-    <div class="coffee-used-container">
-        <h2>{{this.coffee.name}} from {{this.coffee.country}}</h2>
-
+        <img src="https://static.thenounproject.com/png/2519370-200.png" alt="">
+        <div>
+            <h2>{{this.brewMethod.name}}</h2>
+            <p>{{this.coffee.name}} from {{this.coffee.country}}</p>
+        </div>
     </div>
 
     <div class="feedback-container">
-        <h4>satisfaction: {{this.satisfaction}}/5</h4>
+        <h4>How you liked it:  {{this.satisfaction}}/5 <i class="fas fa-star"></i></h4>
 
     </div>
 
-    <div class="edit-btn-container">
-        {{!-- <a class="btn red-background" href="/logs/{{this._id}}/edit">edit</a> --}}
+    <div class="details-btn-container">
         <a class="btn red-border" href="/logs/{{this._id}}"><i class="fas fa-eye"></i> details</a>
     </div>
 </div>
