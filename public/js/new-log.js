@@ -47,6 +47,7 @@ function createCoffee(event) {
   // go back to new log page
   addNewCoffeePage.classList.toggle("hidden");
   formLogTechPage.classList.toggle("hidden");
+  formContainer.classList.toggle("hidden");
 
   axios
     .post("/coffee/api/create", newCoffee)
