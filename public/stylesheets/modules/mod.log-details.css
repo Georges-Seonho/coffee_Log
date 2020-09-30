@@ -1,11 +1,13 @@
 .flex-log-container {
   height: 85%;
+  width: 80vw;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: var(--light-gray);
   border-radius: 15px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .general-infos-container {
@@ -14,14 +16,14 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  padding: 0px 60px 0px 60px;
+  padding: 10px 60px 0px 60px;
 }
 
 .log-summary {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 50%;
+  min-width: 35%;
 }
 
 .log-summary *:not(:last-child) {
@@ -29,18 +31,109 @@
 }
 
 .log-summary span:not(:last-child) {
-    margin-right: 15px;
+  margin-right: 15px;
+}
+
+.flex-log-container i {
+  font-size: 1.5rem;
+}
+
+.log-summary h2 {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.log-summary h3 {
+  font-size: 1.3rem;
+}
+
+.log-satisfaction {
+  display: flex;
+  min-width: 40%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.log-satisfaction h2 {
+  font-weight: 600;
+}
+
+.fa-star {
+  color: var(--yellow);
+  margin-left: 5px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-btn a:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .details-container {
   height: 70%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
-  padding: 0px 60px 0px 60px;
+  padding: 0px 60px 10px 60px;
 }
 
-.coffee-profile {
+.details-container h2 {
+  font-weight: 600;
+  color: var(--red);
+}
+
+.coffee-general-info {
+  display: flex;
+}
+
+.coffee-general-info *:not(:last-child) {
+  margin-right: 15px;
+}
+
+.log-details {
+  background-color: rgb(255, 62, 47, 0.08);
+  border-radius: 15px;
+  min-height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 30px 0px 30px;
+}
+
+.log-profile {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.feedback-item {
+  padding: 15px 0px 15px 0px;
+  width: 20%;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.feedback-item h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.feedback-item p {
+  font-size: 1.4rem;
+}
+
+.log-notes h3 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.log-notes p {
+  padding-top: 10px;
 }

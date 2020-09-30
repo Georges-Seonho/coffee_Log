@@ -4,52 +4,54 @@
             <img src="../../public/img/aereopress.svg" alt="test-img">
         </div>
         <div class="log-summary">
-            <h2><i class="fas fa-calendar-day"></i> {{formatDate log.date}}</h2>
-            <h3>{{log.brewMethod.name}} | {{log.brewTime}}sec </h3>
+            <h3><i class="fas fa-calendar-day"></i> {{formatDate log.date}}</h3>
+            <h2>{{log.brewMethod.name}} | {{log.brewTime}}sec </h2>
             <div>
                 <span><i class="fas fa-seedling"></i> {{log.coffeeQty}}gr</span>
                 <span><i class="fas fa-tint"></i> {{log.waterQty}}gr</span>
                 <span><i class="fas fa-dot-circle"></i> {{log.grindSize}} </span>
             </div>
         </div>
-        <div>
-            <h4>satisfaction: {{log.satisfaction}}/5</h4>
-            <a href="/logs/{{log._id}}/edit">edit</a> ||
-            <a href="/logs/{{log._id}}/delete">delete</a>
+        <div class="log-satisfaction">
+            <h2>Satisfaction: {{log.satisfaction}}/5 <i class="fas fa-star"></i></h2>
+            <div class="action-btn">
+                <a class="edit-btn btn red-border" href="/logs/{{log._id}}/edit"> <i class="fas fa-edit"></i> edit</a>
+                <a class="delete-btn btn red-background" href="/logs/{{log._id}}/delete"><i class="fas fa-trash"></i>
+                    delete</a>
+            </div>
         </div>
     </div>
 
     <div class="details-container">
-        <div>
-            <div class="coffee-details">
-                <div class="coffee-general-info">
-                    <h3>Coffee</h3>
-                    <p>{{log.coffee.name}} from {{log.coffee.country}}</p>
+        <div class="log-details">
+            <div class="coffee-general-info">
+                <h2>COFFEE USED</h2>
+                <p> {{log.coffee.name}}, {{log.coffee.country}} <i class="fas fa-map-marker-alt"></i></p>
+            </div>
+            <h2>EXPERIENCE</h2>
+            <div class="log-profile">
+                <div class="feedback-item">
+                    <h3>Acidity</h3>
+                    <p>{{log.acidity}}</p>
                 </div>
-                <div class="coffee-profile">
-                    <div>
-                        <h3>acidity</h3>
-                        <p>{{log.acidity}}</p>
-                    </div>
-                    <div>
-                        <h3>Intensity</h3>
-                        <p>{{log.intensity}}</p>
-                    </div>
-                    <div>
-                        <h3>Bitterness</h3>
-                        <p>{{log.bitterness}}</p>
-                    </div>
-                    <div>
-                        <h3>Flavor profile</h3>
-                        <p>{{log.flavorProfile}}</p>
-                    </div>
+                <div class="feedback-item">
+                    <h3>Intensity</h3>
+                    <p>{{log.intensity}}</p>
+                </div>
+                <div class="feedback-item">
+                    <h3>Bitterness</h3>
+                    <p>{{log.bitterness}}</p>
+                </div>
+                <div class="feedback-item">
+                    <h3>Flavor profile</h3>
+                    <p>{{log.flavorProfile}}</p>
                 </div>
             </div>
         </div>
-        <div>
-            <p>Notes:<br>
-                {{log.description}}
-            </p>
+        <div class="log-notes">
+            <h3><i class="fas fa-sticky-note"></i> Notes about this log</h3>
+            <hr>
+            <p>{{log.description}}</p>
         </div>
     </div>
 </div>
