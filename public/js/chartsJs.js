@@ -1,33 +1,22 @@
-
-
-const getWaterData = () => {
+const getWaterData = () =>
   axios.get("/dashboard/api/waterData").then((result) => {
-    // waterData = result.data;
     return result.data;
   });
-};
 
-const getCoffeeQtyData = () => {
+const getCoffeeQtyData = () =>
   axios.get("/dashboard/api/coffeeQtyData").then((result) => {
-    // coffeeQtyData = result.data;
     return result.data;
   });
-};
-
 
 chartIt();
 
-
-
-
 async function chartIt() {
-  console.log(getWaterData());
   let waterData = await getWaterData();
   let coffeeQtyData = await getCoffeeQtyData();
   console.log(waterData);
   const ctx = document.getElementById("myChart").getContext("2d");
   const myChart = new Chart(ctx, {
-    type: "bar",
+    type: "line",
     data: {
       labels: waterData,
       datasets: [
@@ -52,4 +41,4 @@ async function chartIt() {
       },
     },
   });
-};
+}
