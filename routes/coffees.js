@@ -65,7 +65,7 @@ router.get("/:id/delete", async (req, res, next) => {
 router.get("/:id/add",requireAuth, async (req, res, next) => {
   try {
     await Coffee.findByIdAndUpdate(req.params.id, {$push: { user: req.session.currentUser._id }});
-    res.redirect('/dashboard', {message: 'added!'})
+    res.render('/dashboard', {message: 'added!'})
   } catch (err) {
     next(err);
   }
