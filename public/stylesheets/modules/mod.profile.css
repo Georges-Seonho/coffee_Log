@@ -61,3 +61,7 @@
     justify-content: space-evenly;
   }
 }
+
+.fit-item {
+  justify-content: space-evenly;
+}
