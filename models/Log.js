@@ -12,6 +12,10 @@ const logSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Coffee",
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   coffeeQty: Number,
   waterQty: Number,
   grindSize: {

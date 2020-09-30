@@ -5,6 +5,7 @@ const requireAuth = require('../middlewares/requireAuth');
 const Technique = require("../models/Technique");
 const Coffee = require("../models/Coffee");
 const Log = require("../models/Log");
+const session = require("express-session");
 
 // C 
 router.get("/create",requireAuth, async (req, res, next) => {
@@ -20,6 +21,7 @@ router.get("/create",requireAuth, async (req, res, next) => {
 router.post("/create", async (req, res, next) => {
   try {
     const newLog = req.body;
+    newLog[user] = req.session.currentUser._id;
     await Log.create(newLog);
     res.redirect("/collection/logs");
   } catch (err) {

@@ -10,7 +10,7 @@ router.get("/create", requireAuth, (req, res, next) => res.render("./coffees/new
 router.post("/create", async (req, res, next) => {
   try {
     const newCoffee = req.body;
-    console.log(newCoffee);
+    newCoffee.user = req.session.currentUser._id;
     await Coffee.create(newCoffee);
     res.redirect("/collection/coffees");
   } catch (err) {
