@@ -57,6 +57,7 @@
 .dropdown-content a {
   padding: 1.2rem 1.6rem;
   display: block;
+  font-size: 1.5rem;
 }
 
 .dropdown-content i {

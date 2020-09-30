@@ -1,21 +1,55 @@
-<div>
-    <h2>{{formatDate log.date}}</h2>
-    <h3>Process</h3>
-    <p>{{log.brewTime}}sec || {{log.brewMethod.name}} || Ground coffee:{{log.coffeeQty}}gr || Water: {{log.waterQty}}gr || Grind size: {{log.grindSize}} </p>
-    <h3>Coffee</h3>
-    <p>{{log.coffee.name}} from {{log.coffee.country}}</p>
+<div class="flex-log-container">
+    <div class="general-infos-container">
+        <div class="brew-method-icon">
+            <img src="../../public/img/aereopress.svg" alt="test-img">
+        </div>
+        <div class="log-summary">
+            <h2><i class="fas fa-calendar-day"></i> {{formatDate log.date}}</h2>
+            <h3>{{log.brewMethod.name}} | {{log.brewTime}}sec </h3>
+            <div>
+                <span><i class="fas fa-seedling"></i> {{log.coffeeQty}}gr</span>
+                <span><i class="fas fa-tint"></i> {{log.waterQty}}gr</span>
+                <span><i class="fas fa-dot-circle"></i> {{log.grindSize}} </span>
+            </div>
+        </div>
+        <div>
+            <h4>satisfaction: {{log.satisfaction}}/5</h4>
+            <a href="/logs/{{log._id}}/edit">edit</a> ||
+            <a href="/logs/{{log._id}}/delete">delete</a>
+        </div>
+    </div>
 
-    <h4>satisfaction: {{log.satisfaction}}/5</h4>
-    <ul>
-        <li>acidity : {{log.acidity}}</li>
-        <li>intensity : {{log.intensity}}</li>
-        <li>bitterness : {{log.bitterness}}</li>
-        <li>flavorProfile : {{log.flavorProfile}}</li>
-    </ul>
-    <p>Notes:<br>
-        {{log.description}}
-    </p>
-    <a href="/logs/{{log._id}}/edit">edit</a> ||
-    <a href="/logs/{{log._id}}/delete">delete</a>
+    <div class="details-container">
+        <div>
+            <div class="coffee-details">
+                <div class="coffee-general-info">
+                    <h3>Coffee</h3>
+                    <p>{{log.coffee.name}} from {{log.coffee.country}}</p>
+                </div>
+                <div class="coffee-profile">
+                    <div>
+                        <h3>acidity</h3>
+                        <p>{{log.acidity}}</p>
+                    </div>
+                    <div>
+                        <h3>Intensity</h3>
+                        <p>{{log.intensity}}</p>
+                    </div>
+                    <div>
+                        <h3>Bitterness</h3>
+                        <p>{{log.bitterness}}</p>
+                    </div>
+                    <div>
+                        <h3>Flavor profile</h3>
+                        <p>{{log.flavorProfile}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>Notes:<br>
+                {{log.description}}
+            </p>
+        </div>
+    </div>
 </div>
-<br>
