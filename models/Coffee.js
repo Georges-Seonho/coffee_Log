@@ -22,7 +22,7 @@ const coffeeSchema = new Schema({
     enum: ["fruity", "acidic", "nutty", "sweet", "floral", "burned"],
   },
   user: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     ref: "User",
   },
   image: String,

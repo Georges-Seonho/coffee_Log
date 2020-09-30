@@ -1,0 +1,12 @@
+<div class="card">
+    <h2>{{this.name}}</h2>
+    <h3>{{this.country}} || {{this.region}} || {{this.altitude}}</h3>
+    <h4>{{this.dryingMethod}} || {{this.roast}}</h4>
+    <p>{{this.flavorProfile}}</p>
+    {{#isSameId this.user @root.currentUser._id}}
+    {{else}}
+    <div>
+        <a href="/coffee/{{this._id}}/add">+ add to my coffees</a> <p>{{message}}</p>
+    </div>
+    {{/isSameId}}
+</div>

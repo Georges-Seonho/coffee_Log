@@ -11,7 +11,7 @@ const session = require("express-session");
 router.get("/create",requireAuth, async (req, res, next) => {
   try {
     const techniques = await Technique.find();
-    const coffees = await Coffee.find();
+    const coffees = await Coffee.find({user: req.session.currentUser._id });
     res.render("logs/new_log", { techniques, coffees, js: ["new-log"] });
   } catch (err) {
     next(err);

@@ -61,4 +61,15 @@ router.get("/:id/delete", async (req, res, next) => {
   }
 });
 
+// Add
+router.get("/:id/add",requireAuth, async (req, res, next) => {
+  try {
+    await Coffee.findByIdAndUpdate(req.params.id, {$push: { user: req.session.currentUser._id }});
+    res.render('/dashboard', {message: 'added!'})
+  } catch (err) {
+    next(err);
+  }
+});
+
+
 module.exports = router;
