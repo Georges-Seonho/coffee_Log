@@ -1,10 +1,11 @@
 <div class="card small-card">
-    <img src="{{this.avatar}}" alt="">
-    <h2>{{this.username}}</h2>
-    <h3>{{this.email}}</h3>
-    <h4>{{this.role}}</h4>
+    <div class="title-delete-container">
+        <h2>{{this.firstname}} {{this.lastname}}</h2>
+        <a class="btn red-background"href="/user/{{this._id}}/delete"><i class="fas fa-trash"></i></a>
+    </div>
+    <h3><i class="fas fa-envelope"></i> <span>{{this.email}}</span></h3>
+    <h4> Role: {{this.role}}</h4>
     <div>
-        <a href="/user/{{this._id}}/edit">edit</a> ||
-        <a href="/user/{{this._id}}/delete">delete</a>
+        <a  class="btn red-border" href="/user/{{this._id}}/edit"><i class="fas fa-edit"></i> edit</a>
     </div>
 </div>
