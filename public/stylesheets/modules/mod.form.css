@@ -122,6 +122,10 @@
   font-size: 1.3rem;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .half-form1 {
   min-height: 85%;
   display: flex;

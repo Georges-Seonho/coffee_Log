@@ -1,81 +1,107 @@
-<form action="/coffee/{{coffee._id}}/edit" method="POST">
+<form class="large-form-container flex-column" action="/coffee/{{coffee._id}}/edit" method="POST">
+    <h1 class="form-title">Modify this coffee</h1>
 
-    <label for="name">Name</label>
-    <input id="name" name="name" placeholder="HEIRLOOM" type="text" required value="{{coffee.name}}">
-    <br>
-
-    <label for="country">Country</label>
-    <input id="country" name="country" placeholder="Simada" type="text" required value="{{coffee.country}}">
-    <br>
-
-    <label for="region">Region</label>
-    <input id="region" name="region" placeholder="Ethiopia" type="text" value="{{coffee.region}}">
-    <br>
-
-    <legend>Drying Method</legend>
-
-    <label>
-        <input type="radio" name="dryingMethod" value="humid - washed" {{isSameValue coffee.dryingMethod "humid - washed"}} required>
-        Humid - washed
-    </label><br>
-
-    <label>
-        <input type="radio" name="dryingMethod" value="naturally dried" {{isSameValue coffee.dryingMethod "naturally dried"}}>
-        Naturally dried
-    </label><br>
-
-    <label for="altitude">Altitude</label>
-    <input id="altitude" name="altitude" placeholder="1000" type="number" value="{{coffee.altitude}}">
-    <br>
-
-    <legend>Roast</legend>
-    <label>
-        <input type="radio" name="roast" value="light roast" {{isSameValue coffee.roast "light roast"}} equired>
-        Light roast
-    </label><br>
-
-    <label>
-        <input type="radio" name="roast" value="medium roast" {{isSameValue coffee.roast "medium roast"}}>
-        Medium roast
-    </label><br>
-
-    <label>
-        <input type="radio" name="roast" value="medium dark roast" {{isSameValue coffee.roast "medium dark roast"}}>
-        Medium dark roast
-    </label><br>
-
-    <label>
-        <input type="radio" name="roast" value="dark roast" {{isSameValue coffee.roast "dark roast"}}>
-        Dark roast
-    </label><br>
-
-    <br>
-
-    <label for="flavorProfile">FlavorProfile</label>
-    <div>
-        <input id="fruity" name="flavorProfile" type="checkbox" value="fruity" {{isValueIncluded coffee.flavorProfile "fruity"}}>
-        <label for="fruity">Fruity</label>
+    <div class="form-item">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" id="name" name="name" placeholder="HEIRLOOM" type="text" required
+            value="{{coffee.name}}">
     </div>
-    <div>
-        <input id="acidic" name="flavorProfile" type="checkbox" value="acidic" {{isValueIncluded coffee.flavorProfile "acidic"}}>
-        <label for="acidic">Acidic</label>
+
+    <div class="form-item">
+        <label class="form-label" for="country">Country</label>
+        <input class="form-input" id="country" name="country" placeholder="Simada" type="text" required
+            value="{{coffee.country}}">
     </div>
-    <div>
-        <input id="nutty" name="flavorProfile" type="checkbox" value="nutty" {{isValueIncluded coffee.flavorProfile "nutty"}}>
-        <label for="nutty">Nutty</label>
+
+    <div class="form-item">
+        <label class="form-label" for="region">Region</label>
+        <input class="form-input" id="region" name="region" placeholder="Ethiopia" type="text"
+            value="{{coffee.region}}">
     </div>
-    <div>
-        <input id="sweet" name="flavorProfile" type="checkbox" value="sweet" {{isValueIncluded coffee.flavorProfile "sweet"}}>
-        <label for="sweet">Sweet</label>
+
+    <div class="form-item">
+        <label class="form-label" for="altitude">Altitude</label>
+        <input class="form-input" id="altitude" name="altitude" placeholder="1000" type="number"
+            value="{{coffee.altitude}}">
     </div>
-    <div>
-        <input id="floral" name="flavorProfile" type="checkbox" value="floral" {{isValueIncluded coffee.flavorProfile "floral"}}>
-        <label for="floral">Floral</label>
+
+    <div class="form-radio-item">
+        <h3 class="form-radio-title">Drying Method:</h3>
+
+        <label>
+            <input type="radio" name="dryingMethod" value="humid - washed"
+                {{isSameValue coffee.dryingMethod "humid - washed"}} required>
+            Humid - washed
+        </label>
+
+        <label>
+            <input type="radio" name="dryingMethod" value="naturally dried"
+                {{isSameValue coffee.dryingMethod "naturally dried"}}>
+            Naturally dried
+        </label>
     </div>
-    <div>
-        <input id="burned" name="flavorProfile" type="checkbox" value="burned" {{isValueIncluded coffee.flavorProfile "burned"}}>
-        <label for="burned">Burned</label>
+
+
+    <div class="form-radio-item">
+        <h3 class="form-radio-title">Roast:</h3>
+        <label>
+            <input type="radio" name="roast" value="light roast" {{isSameValue coffee.roast "light roast"}} equired>
+            Light roast
+        </label>
+
+        <label>
+            <input type="radio" name="roast" value="medium roast" {{isSameValue coffee.roast "medium roast"}}>
+            Medium roast
+        </label>
+
+        <label>
+            <input type="radio" name="roast" value="medium dark roast" {{isSameValue coffee.roast "medium dark roast"}}>
+            Medium dark roast
+        </label>
+
+        <label>
+            <input type="radio" name="roast" value="dark roast" {{isSameValue coffee.roast "dark roast"}}>
+            Dark roast
+        </label>
     </div>
-    <br>
-    <button>Save changes</button> || <a href="/collection/coffees">back</a>
+
+
+    <div class="form-radio-item">
+        <h3 class="form-radio-title">Flavor profile:</h3>
+        <div>
+            <input id="fruity" name="flavorProfile" type="checkbox" value="fruity"
+                {{isValueIncluded coffee.flavorProfile "fruity"}}>
+            <label for="fruity">Fruity</label>
+        </div>
+        <div>
+            <input id="acidic" name="flavorProfile" type="checkbox" value="acidic"
+                {{isValueIncluded coffee.flavorProfile "acidic"}}>
+            <label for="acidic">Acidic</label>
+        </div>
+        <div>
+            <input id="nutty" name="flavorProfile" type="checkbox" value="nutty"
+                {{isValueIncluded coffee.flavorProfile "nutty"}}>
+            <label for="nutty">Nutty</label>
+        </div>
+        <div>
+            <input id="sweet" name="flavorProfile" type="checkbox" value="sweet"
+                {{isValueIncluded coffee.flavorProfile "sweet"}}>
+            <label for="sweet">Sweet</label>
+        </div>
+        <div>
+            <input id="floral" name="flavorProfile" type="checkbox" value="floral"
+                {{isValueIncluded coffee.flavorProfile "floral"}}>
+            <label for="floral">Floral</label>
+        </div>
+        <div>
+            <input id="burned" name="flavorProfile" type="checkbox" value="burned"
+                {{isValueIncluded coffee.flavorProfile "burned"}}>
+            <label for="burned">Burned</label>
+        </div>
+    </div>
+
+    {{!-- <div class="flex-btn-container"> --}}
+        <button class="btn red-background form-btn">Save changes</button>
+        <a href="/collection/coffees"> < go back</a>
+    {{!-- </div> --}}
 </form>
