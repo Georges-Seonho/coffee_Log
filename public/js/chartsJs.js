@@ -11,7 +11,7 @@ chartIt();
 
 async function chartIt() {
   let result = await getRatioData();
-  console.log(result)
+  console.log(result);
   let date = result.datesData;
   let ratio = result.ratioData;
   console.log(ratio, date);
@@ -22,8 +22,9 @@ async function chartIt() {
       labels: date,
       datasets: [
         {
-          label: "# of Votes",
+          label: "ratio coffee/water in % for each of your logs",
           data: ratio,
+          fill: false,
           backgroundColor: ["rgba(255, 99, 132, 0.2)"],
           borderColor: ["rgba(255, 99, 132, 1)"],
           borderWidth: 1,
@@ -31,14 +32,9 @@ async function chartIt() {
       ],
     },
     options: {
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
+      title: {
+        display: true,
+        text: "Ratio coffee/water in % for each of your logs",
       },
     },
   });
