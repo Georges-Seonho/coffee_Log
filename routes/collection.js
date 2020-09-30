@@ -7,7 +7,7 @@ const Technique = require('../models/Technique');
 const User = require('../models/User');
 
 router.get('/logs', requireAuth, async (req, res, next) => {
-  res.render('collection', {logs: await Log.find({}).populate('brewMethod').populate('coffee')});
+  res.render('collection', {logs: await Log.find({}).populate('brewMethod').populate('coffee').sort({ date : -1}) });
 });
 
 router.get('/coffees', requireAuth, async (req, res, next) => {
