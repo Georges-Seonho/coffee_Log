@@ -1,17 +1,28 @@
-<h1 class="dash-title">Your dashboard</h1>
-
-<div class="main-dashboard">
-    <div class="div-top">
-        <div class="chart-container">
-            <canvas id="myChart"></canvas>
+<div class="dashboard-container">
+    <div class="right">
+        <h1 class="feed-title">
+            <i class="fas fa-users"></i> Community coffees
+        </h1>
+        <div class="feed-content">
+            {{#each coffees}}
+            {{> feed_card}}
+            {{/each}}
         </div>
     </div>
 
-    <div class="div-bottom">
+    <div class="top-left block">
         <div class="chart-container">
-            <canvas id="chart2"></canvas>
+            <canvas id="myChart" width="400" height="300"></canvas>
         </div>
+    </div>
 
+    <div class="top-right block">
+        <div class="chart-container">
+            <canvas id="chart2" width="400" height="300"></canvas>
+        </div>
+    </div>
+
+    <div class="bottom block">
         <div class="infos-box">
             <div class="fav-coffee">Hello {{currentUser.firstname}}!</div>
             <div>Favorite technique : {{favBrewMethod.name}}</div>
@@ -24,13 +35,3 @@
             </p>
         </div>
     </div>
-</div>
-
-<div class="feed-right">
-    <h1 class="feed-title"><i class="fas fa-users"></i> Community coffees</h1>
-    <div class="feed-content">
-        {{#each coffees}}
-        {{> feed_card}}
-        {{/each}}
-    </div>
-</div>
