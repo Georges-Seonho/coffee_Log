@@ -90,6 +90,7 @@ chartFlavorProfil();
 async function chartFlavorProfil() {
   let result = await getProfilData();
   let flavorsProfil = result;
+  let scale = Math.max(...Object.values(result));
   let { acidic, fruity, floral, burned, sweet, nutty } = flavorsProfil;
 
   const ctx = document.getElementById("chart2").getContext("2d");
@@ -121,7 +122,7 @@ async function chartFlavorProfil() {
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: acidic + fruity + floral + burned + sweet + nutty,
+          suggestedMax: scale,
         },
       },
     },
