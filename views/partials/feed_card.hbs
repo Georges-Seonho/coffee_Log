@@ -1,9 +1,13 @@
 <div class="card feed-card">
     <div class="title-delete-container feed">
         <h3>{{this.name}}</h3>
+        <div>
+        {{#if @root.isAdmin}}
+        <a id="add-coffee-feed" class="btn red-border" href="/coffees/{{this._id}}/admin-delete"><i class="fas fa-trash"></i></a>
+        {{/if}}
         <a id="add-coffee-feed" class="btn red-border" href="/dashboard/{{this._id}}/add"><i
                 class="fas fa-plus"></i></a>
-
+        </div>
     </div>
 
     <h4><i class="fas fa-map-marker-alt"></i> {{this.country}}, {{this.region}} ({{this.altitude}}m)</h4>
