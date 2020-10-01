@@ -58,7 +58,7 @@ async function chartRatioSatisfaction() {
             type: "linear",
             position: "left",
             ticks: {
-              max: 100,
+              max: 50,
               min: 0,
               stepSize: 10,
             },
@@ -124,7 +124,7 @@ async function chartFlavorProfil() {
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 10,
+          suggestedMax: acidic + fruity + floral + burned + sweet + nutty,
         },
       },
     },
