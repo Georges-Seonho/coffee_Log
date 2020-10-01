@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const requireAuth = require('../middlewares/requireAuth');
+const requireAuth = require("../middlewares/requireAuth");
 const Coffee = require("../models/Coffee");
 
-
 // C
-router.get("/create", requireAuth, (req, res, next) => res.render("./coffees/new_coffee"));
+router.get("/create", requireAuth, (req, res, next) =>
+  res.render("./coffees/new_coffee")
+);
 
 router.post("/create", async (req, res, next) => {
   try {
@@ -21,6 +22,7 @@ router.post("/create", async (req, res, next) => {
 router.post("/api/create", async (req, res, next) => {
   try {
     const newCoffee = req.body;
+    newCoffee.user = req.session.currentUser._id;
     console.log(newCoffee);
     await Coffee.create(newCoffee);
     res.json(newCoffee);
@@ -32,7 +34,7 @@ router.post("/api/create", async (req, res, next) => {
 //R NOT NECESSARY
 
 //U
-router.get("/:id/edit",requireAuth, async (req, res, next) => {
+router.get("/:id/edit", requireAuth, async (req, res, next) => {
   try {
     res.render("./coffees/edit_coffee", {
       coffee: await Coffee.findById(req.params.id),
@@ -60,6 +62,5 @@ router.get("/:id/delete", async (req, res, next) => {
     next(err);
   }
 });
-
 
 module.exports = router;
