@@ -50,6 +50,10 @@ a {
   color: white;
 }
 
+.red-low-dash {
+  color: var(--red);
+}
+
 .hidden {
   display: none;
 }

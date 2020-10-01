@@ -1,3 +1,5 @@
+
+
 .full-screen-container {
   height: 100%;
   width: 100%;
@@ -32,9 +34,10 @@
 }
 
 .flex-container-home h1 {
-  font-size: 6rem;
+  font-size: 8rem;
   font-weight: 600;
   margin-bottom: 30px;
+  font-family: 'Bree Serif', serif;
 }
 
 .btn-home {

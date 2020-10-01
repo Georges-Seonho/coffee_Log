@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 .nav {
   display: flex;
   justify-content: space-between;
@@ -12,9 +11,9 @@
 
 #logo {
   font-weight: 600;
-  font-size: 5rem;
-  font-family: "Dr Sugiyama", cursive;
-  letter-spacing: 0.5rem;
+  font-size: 4rem;
+  font-family: "Bree Serif", serif;
+  /* letter-spacing: 0.5rem; */
 }
 
 .links-container {
