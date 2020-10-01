@@ -13,24 +13,39 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .div-top > .chart-container {
- position: relative;
- max-width: 80%;
- margin: auto;
+  position: relative;
+  max-width: 60%;
+  margin: auto;
+}
+
+.div-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--light-gray);
+  border-radius: 15px;
+  min-height: 40vh;
+  margin: 10px 0 50px 100px;
 }
 
 .div-bottom > .chart-container {
   position: relative;
-  margin: auto;
- }
+  width: 70%;
+}
 
-.div-bottom {
+.div-bottom > .infos-box {
   display: flex;
-  background-color: var(--light-gray);
-  border-radius: 15px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 350px;
+  height: 80%;
+  font-size: 1.7rem;
+  margin-right: 70px;
 }
 
 .feed-right {
@@ -41,7 +56,6 @@
   top: 120px;
   right: 40px;
 }
-
 
 .feed-title {
   position: fixed;
