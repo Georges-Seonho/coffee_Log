@@ -5,47 +5,37 @@ const mongoose = require("mongoose");
 const techniques = [
   {
     name: "Chemex",
-    image: "",
+    image: "https://static.thenounproject.com/png/2519370-200.png",
     temperature: 96
   },
   {
     name: "AeroPress",
-    image: "",
+    image: "https://static.thenounproject.com/png/1025605-200.png",
     temperature: 96
   },
   {
     name: "Hario V60",
-    image: "",
-    temperature: 96
-  },
-  {
-    name: "Bonmac Dripper",
-    image: "",
-    temperature: 96
-  },
-  {
-    name: "Bee House Dripper",
-    image: "",
+    image: "https://static.thenounproject.com/png/1025616-200.png",
     temperature: 96
   },
   {
     name: "Kalita Wave",
-    image: "",
+    image: "https://static.thenounproject.com/png/2553307-200.png",
     temperature: 96
   },
   {
     name: "Moka Pot",
-    image: "",
+    image: "https://static.thenounproject.com/png/2158537-200.png",
     temperature: 96
   },
   {
     name: "French Press",
-    image: "",
+    image: "https://static.thenounproject.com/png/29678-200.png",
     temperature: 96
   },
   {
     name: "Siphon",
-    image: "",
+    image: "https://static.thenounproject.com/png/3529621-200.png",
     temperature: 96
   },
 ];

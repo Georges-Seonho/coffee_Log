@@ -95,8 +95,12 @@
 }
 
 .method-container img {
-  max-width: 40px;
-  margin-right: 5px;
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+.techniques img {
+  max-width: 50px;
 }
 
 .card:hover {
@@ -111,3 +115,4 @@
 .feedback-container fa-star {
   color: var(--yellow);
 }
+

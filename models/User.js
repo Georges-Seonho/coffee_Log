@@ -10,7 +10,7 @@ const userSchema = new Schema({
   role: { type: String, enum: ["admin", "user"], default: "user" },
   avatar: {
     type: String,
-    default: "/public/img/profile_picture.png",
+    default: "https://static.thenounproject.com/png/801405-200.png",
   },
   coffeeCollection: { type: Schema.Types.ObjectId, ref: "Coffee" },
 });
