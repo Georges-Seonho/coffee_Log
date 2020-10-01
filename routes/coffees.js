@@ -68,7 +68,7 @@ router.get("/:id/delete", async (req, res, next) => {
 
 router.get("/:id/admin-delete", async (req, res, next) => {
   await Coffee.findByIdAndDelete(req.params.id);
-  res.redirect("/collection/coffees");
+  res.redirect("/dashboard");
 });
 
 module.exports = router;
