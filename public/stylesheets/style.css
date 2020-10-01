@@ -57,3 +57,7 @@ a {
 .hidden {
   display: none;
 }
+
+.active {
+  color: var(--red);
+}

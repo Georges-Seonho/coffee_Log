@@ -10,8 +10,7 @@ hbs.registerHelper("isSameId", function (value1, value2, options) {
 });
 
 hbs.registerHelper("isSameValue", (val1, val2, options) => {
-  if (val1.toString() === val2)
-    return "checked";
+  if (val1.toString() === val2) return "checked";
 });
 
 hbs.registerHelper("isValueIncluded", (val1, val2, options) => {
@@ -24,4 +23,12 @@ hbs.registerHelper("formatDateInput", function (date) {
 
 hbs.registerHelper("formatDate", function (date) {
   return dayjs(date).format("DD/MM/YYYY");
+});
+
+hbs.registerHelper("isCurrentURL", (val1, val2, val3, val4, val5, val6, options) => {
+  if (val1 === val2) return "active";
+  else if (val1 === val3) return "active";
+  else if (val1 === val4) return "active";
+  else if (val1 === val5) return "active";
+  else if (val1 === val6) return "active";
 });

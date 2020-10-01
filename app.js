@@ -45,6 +45,7 @@ app.use(function (req, res, next) {
 
 //CUSTOM MIDDLEWARES
 app.use(require("./middlewares/exposeLoginStatus"));
+app.use(require("./middlewares/reqCurrentPath"));
 
 //Routers
 app.use("/", require("./routes/index"));

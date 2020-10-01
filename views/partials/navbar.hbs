@@ -9,10 +9,10 @@
 
     <div class="links-container">
         <div class="links">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-            <a class="nav-link" href="/collection/logs"> Collections</a>
+            <a class="nav-link {{isCurrentURL currentPath  "/dashboard"}}" href="/dashboard">Dashboard</a>
+            <a class="nav-link {{isCurrentURL currentPath "/collection/logs/" "/collection/coffees/" "/collection/users" "/collection/techniques"}}" href="/collection/logs">Collections</a>
         </div>
-
+ 
         <div class="dropdown">
             <a class="dropbtn">{{currentUser.firstname}}  <i class="fas fa-caret-down"></i></a>
             <div class="dropdown-content">
