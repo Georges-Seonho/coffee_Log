@@ -7,7 +7,7 @@ const getRatioData = () =>
     return result.data;
   });
 
-  chartRatioSatisfaction();
+chartRatioSatisfaction();
 
 async function chartRatioSatisfaction() {
   let result = await getRatioData();
@@ -58,7 +58,7 @@ async function chartRatioSatisfaction() {
             type: "linear",
             position: "left",
             ticks: {
-              max: 40,
+              max: 100,
               min: 0,
               stepSize: 10,
             },
@@ -77,6 +77,55 @@ async function chartRatioSatisfaction() {
             },
           },
         ],
+      },
+    },
+  });
+}
+
+const getProfilData = () =>
+  axios.get("/dashboard/api/profilData").then((result) => {
+    console.log(result.data);
+    return result.data;
+  });
+getProfilData();
+chartFlavorProfil();
+
+async function chartFlavorProfil() {
+  let result = await getProfilData();
+  let flavorsProfil = result;
+  let { acidic, fruity, floral, burned, sweet, nutty } = flavorsProfil;
+
+  const ctx = document.getElementById("chart2").getContext("2d");
+  const flavorProfilChart = new Chart(ctx, {
+    type: "radar",
+    data: {
+      labels: ["acidic", "fruity", "floral", "burned", "sweet", "nutty"],
+      datasets: [
+        {
+          data: [acidic, fruity, floral, burned, sweet, nutty],
+          label: "number of occurance of each flavor",
+          fill: false,
+          borderColor: ["rgba(255,62,47, 1)"],
+        },
+      ],
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Flavors distribution among your coffees",
+      },
+      legend: {
+        display: true,
+        position: "bottom",
+      },
+      scale: {
+        angleLines: {
+          display: false,
+        },
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 10,
+        },
       },
     },
   });
