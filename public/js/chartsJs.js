@@ -3,7 +3,6 @@ let dates;
 
 const getRatioData = () =>
   axios.get("/dashboard/api/ratioData").then((result) => {
-    console.log(result.data.datesData);
     return result.data;
   });
 
@@ -14,7 +13,6 @@ async function chartRatioSatisfaction() {
   let date = result.datesData;
   let ratio = result.ratioData;
   let rates = result.ratesData;
-  console.log(ratio, date);
   const ctx = document.getElementById("myChart").getContext("2d");
   const ratioAndSatisfactionChart = new Chart(ctx, {
     type: "line",
@@ -84,7 +82,6 @@ async function chartRatioSatisfaction() {
 
 const getProfilData = () =>
   axios.get("/dashboard/api/profilData").then((result) => {
-    console.log(result.data);
     return result.data;
   });
 getProfilData();

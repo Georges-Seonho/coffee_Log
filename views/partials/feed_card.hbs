@@ -1,17 +1,13 @@
 <div class="card feed-card">
     <div class="title-delete-container feed">
         <h3>{{this.name}}</h3>
-        <a class="btn red-border" href="/dashboard/{{this._id}}/add"><i class="fas fa-plus"></i></a>
+        <a id="add-coffee-feed" class="btn red-border" href="/dashboard/{{this._id}}/add"><i
+                class="fas fa-plus"></i></a>
+
     </div>
 
     <h4><i class="fas fa-map-marker-alt"></i> {{this.country}}, {{this.region}} ({{this.altitude}}m)</h4>
     <h4><span>Drying method:</span> {{this.dryingMethod}}</h4>
     <h4> <span>Roast:</span> {{this.roast}}</h4>
     <h4> <span>Flavor profile:</span> {{this.flavorProfile}}</h4>
-    {{!-- {{#isSameId this.user @root.currentUser._id}}
-    {{else}}
-    <div>
-        <a href="/dashboard/{{this._id}}/add">+ add to my coffees</a> <p>{{message}}</p>
-    </div>
-    {{/isSameId}} --}}
 </div>

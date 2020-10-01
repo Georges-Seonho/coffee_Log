@@ -53,14 +53,22 @@ router.post("/:id/edit", async (req, res, next) => {
   }
 });
 
-//D
+// ONLY DELETE COFFEE FROM USER ACCOUNT (KEEP IT IN THE DB FOR FEED)
 router.get("/:id/delete", async (req, res, next) => {
   try {
-    await Coffee.findByIdAndDelete(req.params.id);
+    await Coffee.updateOne(
+      { _id: req.params.id },
+      { $pullAll: { user: [req.session.currentUser._id] } }
+    );
     res.redirect("/collection/coffees");
   } catch (err) {
     next(err);
   }
+});
+
+router.get("/:id/admin-delete", async (req, res, next) => {
+  await Coffee.findByIdAndDelete(req.params.id);
+  res.redirect("/collection/coffees");
 });
 
 module.exports = router;

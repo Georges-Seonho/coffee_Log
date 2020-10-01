@@ -5,17 +5,25 @@ const requireAuth = require("../middlewares/requireAuth");
 const Coffee = require("../models/Coffee");
 const dayjs = require("dayjs");
 
-router.get("/", requireAuth, async function (req, res, next) {
-  res.render("dashboard", { coffees: await Coffee.find({}), js: ["chartsJs"] });
+router.get("/", requireAuth, async (req, res, next) => {
+  try {
+    // console.log(req.session.currentUser);
+    coffees = await Coffee.find({
+      user: { $nin: [req.session.currentUser._id] },
+    });
+    res.render("dashboard", { coffees, js: ["chartsJs"] });
+  } catch (err) {
+    next(err);
+  }
 });
 
 // Add
 router.get("/:id/add", requireAuth, async (req, res, next) => {
   try {
-    await Coffee.findByIdAndUpdate(req.params.id, {
-      $push: { user: req.session.currentUser._id },
-    });
-    res.render("dashboard", { message: "added!" });
+    const coffee = await Coffee.findById(req.params.id);
+    coffee.user.push(req.session.currentUser._id);
+    await Coffee.create(coffee);
+    res.redirect("/dashboard");
   } catch (err) {
     next(err);
   }
@@ -50,31 +58,31 @@ router.get("/api/profilData", async (req, res, next) => {
       "flavorProfile"
     );
     let acidic = 0;
-    let fruity = 0; 
-    let floral = 0; 
-    let burned = 0; 
+    let fruity = 0;
+    let floral = 0;
+    let burned = 0;
     let sweet = 0;
     let nutty = 0;
     userLogs.forEach((elm) => {
       elm.flavorProfile.forEach((fp) => {
         switch (fp) {
           case "acidic":
-            acidic+=1;
+            acidic += 1;
             break;
           case "fruity":
-            fruity+=1;
+            fruity += 1;
             break;
           case "floral":
-            floral+=1;
+            floral += 1;
             break;
           case "burned":
-            burned+=1;
+            burned += 1;
             break;
           case "sweet":
-            sweet+=1;
+            sweet += 1;
             break;
           case "nutty":
-            nutty+=1;
+            nutty += 1;
             break;
           default:
             null;
@@ -86,7 +94,6 @@ router.get("/api/profilData", async (req, res, next) => {
     next(err);
   }
 });
-
 
 router.get("/api/ratioData", async (req, res, next) => {
   try {
