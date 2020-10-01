@@ -21,8 +21,8 @@ router.get("/", requireAuth, async (req, res, next) => {
       }
       return acc;
     }, {});
-    let id = Object.keys(favCoffees)[0];
-    let favCoffee = await Coffee.findById(id);
+    let idFavCoffees = Object.keys(favCoffees).reduce((a, b) => favCoffees[a] > favCoffees[b] ? a : b);
+    let favCoffee = await Coffee.findById(idFavCoffees);
 
     //GET NUMBER OF COFFEES
     let brewMethod = [];
@@ -35,9 +35,8 @@ router.get("/", requireAuth, async (req, res, next) => {
       }
       return acc;
     }, {});
-    let idBrewMethod = Object.keys(favBrewMethods)[0];
+    let idBrewMethod = Object.keys(favBrewMethods).reduce((a, b) => favBrewMethods[a] > favBrewMethods[b] ? a : b);
     let favBrewMethod = await Technique.findById(idBrewMethod);
-    console.log(favBrewMethod);
 
     //GET COFFEES
     coffees = await Coffee.find({
