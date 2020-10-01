@@ -58,7 +58,7 @@ async function chartRatioSatisfaction() {
             type: "linear",
             position: "left",
             ticks: {
-              max: 100,
+              max: 50,
               min: 0,
               stepSize: 10,
             },
