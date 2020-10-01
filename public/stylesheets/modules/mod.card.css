@@ -118,19 +118,16 @@
   font-size: 1rem;
 }
 
+.btn-add-feed i {
+  font-size: 1.5rem;
+}
+
 .btn-add-feed {
   color: var(--red);
   text-align: center;
   padding-bottom: 5px;
-  padding: 0px 5px 5px 5px;
-  border: 2px solid var(--red);
-  border-radius: 5px;
 }
 
-.btn-add-feed:hover {
-  background-color: var(--red);
-  color: var(--light-gray);
-}
 
 .title-delete-container h2 {
   color: var(--red);
