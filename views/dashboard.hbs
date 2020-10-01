@@ -22,7 +22,16 @@
         </div>
     </div>
 
-    <div class="bottom block"> 
-
+    <div class="bottom block">
+        <div class="infos-box">
+            <div class="fav-coffee">Hello {{currentUser.firstname}}!</div>
+            <div>Favorite technique : {{favBrewMethod.name}}</div>
+            <div class="num-of-coffees">Num of coffees you drank so far : {{numOfCoffees}}</div>
+            <p>
+                Coffee you dank the most: <br>
+                {{favCoffee.name}}, from {{favCoffee.country}} <br>
+                altitude of {{favCoffee.altitude}} <br>
+                roast level : {{favCoffee.roast}}
+            </p>
+        </div>
     </div>
-</div>

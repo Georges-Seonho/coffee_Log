@@ -1,17 +1,55 @@
 const express = require("express");
 const router = express.Router();
 const Log = require("../models/Log");
-const requireAuth = require("../middlewares/requireAuth");
 const Coffee = require("../models/Coffee");
+const Technique = require("../models/Technique");
+const requireAuth = require("../middlewares/requireAuth");
 const dayjs = require("dayjs");
 
 router.get("/", requireAuth, async (req, res, next) => {
   try {
-    // console.log(req.session.currentUser);
+    // GET FAVS COFFEES
+    const currentUserId = req.session.currentUser._id;
+    const userLogs = await Log.find({ user: currentUserId });
+    let coffees = [];
+    userLogs.forEach((elm) => coffees.push(elm.coffee));
+    let favCoffees = coffees.reduce(function (acc, curr) {
+      if (typeof acc[curr] == "undefined") {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+    let id = Object.keys(favCoffees)[0];
+    let favCoffee = await Coffee.findById(id);
+
+    //GET NUMBER OF COFFEES
+    let brewMethod = [];
+    userLogs.forEach((elm) => brewMethod.push(elm.brewMethod));
+    let favBrewMethods = brewMethod.reduce(function (acc, curr) {
+      if (typeof acc[curr] == "undefined") {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+    let idBrewMethod = Object.keys(favBrewMethods)[0];
+    let favBrewMethod = await Technique.findById(idBrewMethod);
+    console.log(favBrewMethod);
+
+    //GET COFFEES
     coffees = await Coffee.find({
       user: { $nin: [req.session.currentUser._id] },
     });
-    res.render("dashboard", { coffees, js: ["chartsJs"] });
+    res.render("dashboard", {
+      favCoffee,
+      coffees,
+      numOfCoffees: userLogs.length,
+      favBrewMethod,
+      js: ["chartsJs"],
+    });
   } catch (err) {
     next(err);
   }
@@ -90,27 +128,6 @@ router.get("/api/profilData", async (req, res, next) => {
       });
     });
     res.json({ acidic, fruity, floral, burned, sweet, nutty });
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.get("/api/ratioData", async (req, res, next) => {
-  try {
-    const currentUserId = req.session.currentUser._id;
-    const userLogs = await Log.find({ user: currentUserId });
-    let numOfCoffee = 0;
-    let favCoffee;
-    userLogs.forEach((elm) =>
-      ratioData.push((elm.coffeeQty / elm.waterQty) * 100)
-    );
-    userLogs.forEach((elm) => {
-      datesData.push(dayjs(elm.date).format("DD/MM"));
-    });
-    userLogs.forEach((elm) => {
-      ratesData.push(elm.satisfaction);
-    });
-    res.json({ ratioData, datesData, ratesData });
   } catch (err) {
     next(err);
   }
