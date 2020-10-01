@@ -8,6 +8,8 @@ const getRatioData = () =>
 
 chartRatioSatisfaction();
 
+console.log(Chart.defaults);
+
 async function chartRatioSatisfaction() {
   let result = await getRatioData();
   let date = result.datesData;
@@ -25,7 +27,7 @@ async function chartRatioSatisfaction() {
           data: ratio,
           backgroundColor: ["rgba(241,197,63, 0.2)"],
           borderColor: ["rgba(241,197,63, 1)"],
-          borderWidth: 1,
+          borderWidth: 1.5,
         },
         {
           label: "satisfaction on a 5points scale",
@@ -33,7 +35,7 @@ async function chartRatioSatisfaction() {
           yAxisID: "B",
           fill: false,
           borderColor: ["rgba(255,62,47, 1)"],
-          borderWidth: 1,
+          borderWidth: 1.5,
         },
       ],
     },
@@ -97,20 +99,29 @@ async function chartFlavorProfil() {
   const flavorProfilChart = new Chart(ctx, {
     type: "radar",
     data: {
-      labels: ["acidic", "fruity", "floral", "burned", "sweet", "nutty"],
+      labels: ["Acidic", "Fruity", "Floral", "Burned", "Sweet", "Nutty"],
       datasets: [
         {
           data: [acidic, fruity, floral, burned, sweet, nutty],
-          label: "number of occurance of each flavor",
-          fill: false,
+          label: "occurrences # for each flavor",
+          backgroundColor: ["rgba(255,62,47, 0.1)"],
           borderColor: ["rgba(255,62,47, 1)"],
+          borderWidth: 1.5,
         },
       ],
     },
     options: {
+      elements: {
+        point: {
+          backgroundColor: "rgba(255,62,47, 1)",
+        },
+      },
+      tooltips: {
+        enabled: false,
+      },
       title: {
         display: true,
-        text: "Flavors distribution among your coffees",
+        text: "Flavors distribution among all your logs",
       },
       legend: {
         display: true,
