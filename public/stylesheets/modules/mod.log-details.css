@@ -7,7 +7,7 @@
   justify-content: space-evenly;
   background-color: var(--light-gray);
   border-radius: 15px;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 
 .general-infos-container {
@@ -132,11 +132,11 @@
 .feedback-item h3 {
   font-weight: 600;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .feedback-item p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .log-notes h3 {
