@@ -25,10 +25,11 @@ hbs.registerHelper("formatDate", function (date) {
   return dayjs(date).format("DD/MM/YYYY");
 });
 
-hbs.registerHelper("isCurrentURL", (val1, val2, val3, val4, val5, val6, options) => {
+hbs.registerHelper("isCurrentURL", (val1, val2, val3, val4, val5, val6, val7, options) => {
   if (val1 === val2) return "active";
   else if (val1 === val3) return "active";
   else if (val1 === val4) return "active";
   else if (val1 === val5) return "active";
   else if (val1 === val6) return "active";
+  else if (val1 === val7) return "active";
 });
