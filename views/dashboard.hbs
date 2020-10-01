@@ -23,15 +23,42 @@
     </div>
 
     <div class="bottom block">
-        <div class="infos-box">
-            <div class="fav-coffee">Hello {{currentUser.firstname}}!</div>
-            <div>Favorite technique : {{favBrewMethod.name}}</div>
-            <div class="num-of-coffees">Num of coffees you drank so far : {{numOfCoffees}}</div>
-            <p>
-                Coffee you dank the most: <br>
-                {{favCoffee.name}}, from {{favCoffee.country}} <br>
-                altitude of {{favCoffee.altitude}} <br>
-                roast level : {{favCoffee.roast}}
-            </p>
+
+        <div class="basic-info-container">
+
+            <div class="header-welcome">
+                <h1>Welcome to your <span class="red-low-dash">dashboard</span> {{currentUser.firstname}} </h1>
+                <p>You'll find some interesting informations about your coffee journey here. Enjoy!</p>
+            </div>
+
+            <div class="fav brew-tech">
+                <div class="fav-circle">
+                    <img src="{{favBrewMethod.image}}" alt="brew-tech-img">
+                </div>
+                <div class="fav-text">
+                    <h2>{{favBrewMethod.name}}</h2>
+                    <h3>is your favorite technique</h3>
+                </div>
+            </div>
+
+            <div class="fav coffee">
+                <div class="fav-name">
+                    <h2 id="coffee-name">{{favCoffee.name}}</h2>
+                    <h3>is your favorite coffee</h3>
+                </div>
+                <div class="fav-origin">
+                    <p><i class="fas fa-map-marker-alt"></i> {{favCoffee.country}} | <i class="fas fa-mountain"></i>
+                        {{favCoffee.altitude}}m | <i class="fas fa-dot-circle"></i> {{favCoffee.roast}}</p>
+                </div>
+            </div>
+            <div class="fav coffee-number">
+                <div class="number">
+                    <span id="coffee-nb">{{numOfCoffees}}<i class="fas fa-coffee"></i></span>
+                </div>
+                <div class="text">
+                    <h2>total # of coffees drank </h2>
+                    <h3>so far...</h3>
+                </div>
+            </div>
+
         </div>
-    </div>
