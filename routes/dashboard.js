@@ -87,4 +87,26 @@ router.get("/api/profilData", async (req, res, next) => {
   }
 });
 
+
+router.get("/api/ratioData", async (req, res, next) => {
+  try {
+    const currentUserId = req.session.currentUser._id;
+    const userLogs = await Log.find({ user: currentUserId });
+    let numOfCoffee = 0;
+    let favCoffee;
+    userLogs.forEach((elm) =>
+      ratioData.push((elm.coffeeQty / elm.waterQty) * 100)
+    );
+    userLogs.forEach((elm) => {
+      datesData.push(dayjs(elm.date).format("DD/MM"));
+    });
+    userLogs.forEach((elm) => {
+      ratesData.push(elm.satisfaction);
+    });
+    res.json({ ratioData, datesData, ratesData });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

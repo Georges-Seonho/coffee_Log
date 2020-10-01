@@ -124,7 +124,7 @@ async function chartFlavorProfil() {
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 10,
+          suggestedMax: acidic + fruity + floral + burned + sweet + nutty,
         },
       },
     },
