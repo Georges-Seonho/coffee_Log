@@ -22,7 +22,7 @@ router.post("/signin", async (req, res, next) => {
       delete userObject.password;
       req.session.currentUser = userObject;
       console.log(userObject);
-      res.redirect("/");
+      res.redirect("/dashboard");
     }
   }
 });

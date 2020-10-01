@@ -15,8 +15,9 @@
 </head>
 
 <body>
-
+  {{#if isLoggedIn}}
   {{> navbar}}
+  {{/if}}
 
   {{{body}}}
 </body>

@@ -1,0 +1,50 @@
+.full-screen-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.flex-container-home {
+  min-height: 60vh;
+  min-width: 50vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--light-gray);
+  border-radius: 15px;
+  font-size: 2rem;
+  margin: auto;
+}
+
+.home-baseline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 15vh;
+}
+
+.home-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex-container-home h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.btn-home {
+  padding: 15px;
+  text-align: center;
+  width: 15%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.home-btn a:not(:last-child) {
+  margin-right: 15px;
+}

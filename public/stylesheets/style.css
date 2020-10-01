@@ -5,6 +5,7 @@
 @import url("../stylesheets/modules/mod.profile.css");
 @import url("../stylesheets/modules/mod.log-details.css");
 @import url("../stylesheets/modules/mod.dashboard.css");
+@import url("../stylesheets/modules/mod.home.css");
 @import url("../stylesheets/vars.css");
 
 html {
@@ -16,7 +17,7 @@ html {
 body {
   font-family: Avenir;
   width: 95vw;
-  margin: 35px 25px auto 25px;
+  margin: 25px 25px auto 25px;
   height: 95vh;
 }
 
