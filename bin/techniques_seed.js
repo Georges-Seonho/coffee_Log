@@ -11,12 +11,12 @@ const techniques = [
   {
     name: "AeroPress",
     image: "https://static.thenounproject.com/png/1025605-200.png",
-    temperature: 96
+    temperature: 94
   },
   {
     name: "Hario V60",
     image: "https://static.thenounproject.com/png/1025616-200.png",
-    temperature: 96
+    temperature: 92
   },
   {
     name: "Kalita Wave",
@@ -26,17 +26,17 @@ const techniques = [
   {
     name: "Moka Pot",
     image: "https://static.thenounproject.com/png/2158537-200.png",
-    temperature: 96
+    temperature: 95
   },
   {
     name: "French Press",
     image: "https://static.thenounproject.com/png/29678-200.png",
-    temperature: 96
+    temperature: 94
   },
   {
     name: "Siphon",
     image: "https://static.thenounproject.com/png/3529621-200.png",
-    temperature: 96
+    temperature: 91
   },
 ];
 
