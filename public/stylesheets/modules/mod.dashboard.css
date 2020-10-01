@@ -1,15 +1,47 @@
-.chart {
-  max-width: 600px;
+.dash-title {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.main-dashboard {
+  position: absolute;
+  bottom: 10px;
+  width: 67%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.div-top > .chart-container {
+ position: relative;
+ max-width: 80%;
+ margin: auto;
+}
+
+.div-bottom > .chart-container {
+  position: relative;
+  margin: auto;
+ }
+
+.div-bottom {
+  display: flex;
+  background-color: var(--light-gray);
+  border-radius: 15px;
 }
 
 .feed-right {
   position: absolute;
   width: 300px;
   height: 80vh;
-  overflow:scroll;
-  top: 130px;
+  overflow: scroll;
+  top: 120px;
   right: 40px;
 }
+
 
 .feed-title {
   position: fixed;
