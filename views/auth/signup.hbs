@@ -1,4 +1,33 @@
-<div class="center">
+<div class="login-container">
+    <div class="input-container">
+        <form class="login-form-container" method="post" action="/auth/signup">
+            <h1>sign<span class="red-low-dash">_</span>up</h1>
+            <span class="red-low-dash error">{{error}}</span>
+
+            <div class="login-input ninja">
+                <label for="firstname"><i class="fas fa-user-ninja"></i></i></label>
+                <input id="firstname" type="text" placeholder="firstname" name="firstname" required>
+            </div>
+            <div class="login-input ninja">
+                <label for="lastname"><i class="fas fa-user-ninja"></i></label>
+                <input id="lastname" type="text" placeholder="lastname" name="lastname" required>
+            </div>
+            <div class="login-input">
+                <label for="email"><i class="fas fa-envelope"></i></label>
+                <input id="email" type="email" placeholder="email" name="email" required>
+            </div>
+            <div class="login-input">
+                <label for="password"><i class="fas fa-key"></i></label>
+                <input id="password" type="password" placeholder="password" name="password" required>
+            </div>
+            <button>enter</button>
+            <p>No account yet?<a class="auth-link" href="/auth/signin"> <span class="red-low-dash">Signin</span></a></p>
+        </form>
+    </div>
+</div>
+
+
+{{!-- <div class="center">
     <div class="form-container">
         <div class="auth-container signup-container">
             <h1 class="form-title">SIGN UP</h1>
@@ -28,4 +57,4 @@
             <p>Already have an account?<a class="auth-link" href="/auth/signin"> Signin</a></p>
         </div>
     </div>
-</div>
+</div> --}}

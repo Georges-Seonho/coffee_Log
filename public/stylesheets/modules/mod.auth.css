@@ -21,9 +21,9 @@
 .login-form-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  height: 90%;
+  height: 95%;
 }
 
 .login-input {
@@ -36,14 +36,13 @@
 }
 
 .login-form-container h1 {
-  font-size: 8rem;
+  font-size: 7.5rem;
   font-weight: 600;
   padding-bottom: 2rem;
   font-family: "Bree Serif", serif;
-
 }
 
-.login-form-container label {
+.login-input label {
   background-color: var(--red);
   color: var(--light-gray);
   padding: 10px;
@@ -52,7 +51,7 @@
   font-size: 1.5rem;
 }
 
-.login-form-container input {
+.login-input input {
   padding: 10px;
   border: none;
   background: var(--gray);
@@ -83,36 +82,3 @@
   font-size: 1.5rem;
 }
 
-/* .auth-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.center {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup-container {
-    height: 65%;
-}
-
-.signin-container {
-    height: 40%;
-}
-
-.auth-link {
-  color: var(--red);
-  text-align: center;
-}
-
-.auth-btn {
-    padding: 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    margin: 0 auto;
-  } */

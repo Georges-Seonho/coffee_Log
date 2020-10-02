@@ -147,3 +147,8 @@
 .log-notes p {
   padding-top: 10px;
 }
+
+.fas.fa-caret-square-left {
+  color: var(--black);
+  font-size: 2.5rem;
+}
