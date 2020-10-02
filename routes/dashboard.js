@@ -21,7 +21,9 @@ router.get("/", requireAuth, async (req, res, next) => {
       }
       return acc;
     }, {});
-    let idFavCoffees = Object.keys(favCoffees).reduce((a, b) => favCoffees[a] > favCoffees[b] ? a : b);
+    let idFavCoffees = Object.keys(favCoffees).reduce((a, b) =>
+      favCoffees[a] > favCoffees[b] ? a : b
+    );
     let favCoffee = await Coffee.findById(idFavCoffees);
 
     //GET NUMBER OF COFFEES
@@ -35,7 +37,9 @@ router.get("/", requireAuth, async (req, res, next) => {
       }
       return acc;
     }, {});
-    let idBrewMethod = Object.keys(favBrewMethods).reduce((a, b) => favBrewMethods[a] > favBrewMethods[b] ? a : b);
+    let idBrewMethod = Object.keys(favBrewMethods).reduce((a, b) =>
+      favBrewMethods[a] > favBrewMethods[b] ? a : b
+    );
     let favBrewMethod = await Technique.findById(idBrewMethod);
 
     //GET COFFEES
@@ -73,9 +77,11 @@ router.get("/api/ratioData", async (req, res, next) => {
     let ratioData = [];
     let datesData = [];
     let ratesData = [];
-    userLogs.forEach((elm) =>
-      ratioData.push((elm.coffeeQty / elm.waterQty) * 100)
-    );
+    userLogs.forEach((elm) => {
+      let decimalsRatio = (elm.coffeeQty / elm.waterQty) * 100;
+      let ratio = decimalsRatio.toFixed();
+      ratioData.push(ratio);
+    });
     userLogs.forEach((elm) => {
       datesData.push(dayjs(elm.date).format("DD/MM"));
     });
