@@ -1,6 +1,6 @@
 # Coffee_Log
 
-Coffee_Log is an app to help barista and coffee lovers track their experiments and get useful insights about their consumption. 
+**Coffee_Log** is an app to help barista and coffee lovers track their experiments and get useful insights about their consumption. 
 
 ☕️ Try it here: https://coffeeapp-lf.herokuapp.com/
  
@@ -22,4 +22,5 @@ Technologies used:
 Feel free to fork and contribute!
 
 Lisa Poncet https://www.linkedin.com/in/lisaponcet/
+
 François Vieux https://www.linkedin.com/in/françois-g-vieux/
