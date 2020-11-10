@@ -12,7 +12,10 @@ const userSchema = new Schema({
     type: String,
     default: "https://static.thenounproject.com/png/801405-200.png",
   },
-  coffeeCollection: { type: Schema.Types.ObjectId, ref: "Coffee" },
+  coffeeCollection: {
+    type: Schema.Types.ObjectId,
+    ref: "Coffee",
+  },
 });
 
 const User = mongoose.model("User", userSchema);

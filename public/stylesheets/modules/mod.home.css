@@ -51,3 +51,9 @@
 .home-btn a:not(:last-child) {
   margin-right: 15px;
 }
+
+@media only screen and (max-width: 768px) {
+  .full-screen-container {
+    display: none;
+  }
+}
