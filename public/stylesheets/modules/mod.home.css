@@ -1,5 +1,3 @@
-
-
 .full-screen-container {
   height: 100%;
   width: 100%;
@@ -37,7 +35,7 @@
   font-size: 8rem;
   font-weight: 600;
   margin-bottom: 30px;
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
 }
 
 .btn-home {
@@ -52,8 +50,34 @@
   margin-right: 15px;
 }
 
+.alert-small-screen {
+  margin: 20px;
+  max-width: 90vw;
+  line-height: 1.8;
+  font-size: 1.5rem;
+}
+
+.alert-container {
+  margin-top: 30px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-screen-illu {
+  max-width: 280px;
+  margin: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   .full-screen-container {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .alert-container {
     display: none;
   }
 }
